@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
     $apiKey = "af0bed8924751e07bce0f22544b547e7";
 
-    $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&appid=" . $apiKey;
+    $url = "https://api.openweathermap.org/data/2.5/forecast?q=" . urlencode($ville) . "&appid=" . $apiKey;
 
     // Initialisation de cURL
     $curl = curl_init();
@@ -28,32 +28,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_close($curl);
     
     // Conversion des données en JSON
-    $weatherData = json_decode($response);
+    $data = json_decode($response);
     
     // Vérification de la réussite de la conversion JSON
-    if ($weatherData === null) {
+    if ($data === null) {
         die("Erreur de décodage JSON");
     }
     
     // Vérifier si la requête a retourné des données
-    if ($weatherData && isset($weatherData->name)) {
+    if ($data && isset($data->city->name)) {
         // Récupération des données de la réponse JSON
-        $name = $weatherData->name;
-        $temps = $weatherData->weather[0]->main;
-        $description = $weatherData->weather[0]->description;
+        $name = $data->city->name;
         
-        // Récupération et conversion de la température
-        $temperatureK = $weatherData->main->temp;
-        $temperatureC = $temperatureK - 273.15;
-        
-        // Enregistrement des données dans la session
-        $_SESSION['weatherData'] = $weatherData;
-        $_SESSION['name'] = $name;
-        $_SESSION['temps'] = $temps;
-        $_SESSION['description'] = $description;
-        $_SESSION['temperature'] = $temperatureC;
+        // Parcourir les prévisions météorologiques pour chaque période
+        foreach ($data->list as $forecast) {
+            // Récupérer les données spécifiques pour chaque période
+            $temps = $forecast->weather[0]->main;
+            $description = $forecast->weather[0]->description;
+            
+            // Récupération et conversion de la température
+            $temperatureK = $forecast->main->temp;
+            $temperatureC = $temperatureK - 273.15;
+
+            $heure = $forecast->dt_txt;
+            
+            // Afficher les données de chaque périod
+            echo "Temps : $temps<br>";
+            echo "Description : $description<br>";
+            echo "Température : $temperatureC °C<br>";
+            echo "Date : $heure<br>";
+            
+            // Afficher une séparation entre chaque période
+            echo "<hr>";
+        }        
+
     } else {
-        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données.";
+        echo "Désolé, la ville que vous recherchez ne figure pas dans la base de données.";
     }
 }
 ?>
@@ -66,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </head>
 <body>
-    <h1>Choisissez une ville :</h1>
+    <h1>Choisissez une ville</h1>
 
     <hr/>
 
@@ -77,31 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <div id="resultat">
-        <?php
-            if (!empty($message)) {
-                echo "<p>$message</p>";
-            } 
-            elseif (isset($_SESSION['weatherData'])) {
-                $weatherData = $_SESSION['weatherData'];
-                $name = $_SESSION['name'];
-                $temps = $_SESSION['temps'];
-                $description = $_SESSION['description'];
-                $temperatureC = $_SESSION['temperature'];
-
-                // Affichez les données de la météo ici
-                echo "Ville : $name<br>";
-                echo "Temps : $temps<br>";
-                echo "Description : $description<br>";
-                echo "Température : $temperatureC °C<br>";
-
-                // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
-                unset($_SESSION['weatherData']);
-                unset($_SESSION['name']);
-                unset($_SESSION['temps']);
-                unset($_SESSION['description']);
-                unset($_SESSION['temperature']);
-            }
-        ?>
     </div>
 </body>
 </html>
