@@ -1,11 +1,16 @@
+/* marge de tous les éléments */
+.info{
+    margin: 5vw;
+    margin-top: 5vh;   
+}
+
 /* alignement du formulaire (barre de recherche et bouton) */
 form{
     position: relative;
     display: flex;
     justify-content: space-between;
     width: auto;
-    margin: 5vw;
-    margin-top: 5vh;
+    max-width: 320px;
 }
 
 /* barre de recherche */
@@ -29,3 +34,9 @@ input{
     background-color: var(--background-input);
 }
 
+/* suppression du bouton en dessous d'une certaine taille d'écran */
+@media (max-width: 315px) {
+    .form_button{
+        display: none;
+    }
+}
