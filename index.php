@@ -121,6 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="info">
 
+        <h1>Ma Météo</h1>
+
         <form method="post" action="">
             <label for="villeInput" hidden>Ville</label>
             <input type="text" name="ville" id="villeInput" required>
