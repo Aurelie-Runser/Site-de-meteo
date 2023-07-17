@@ -1,4 +1,6 @@
 :root {
-    --zone-border: #eee solid 5px;
-    --zone-background: #eeeeee80
+    --border: #eee solid 3px;
+    --background: #eeeeee80;
+    --background-input: #eeeeee50;
+    --texte-color: #333;
 }

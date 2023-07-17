@@ -1,12 +1,31 @@
-
+/* alignement du formulaire (barre de recherche et bouton) */
 form{
-    border: var(--zone-border);
-    background-color: var(--zone-background);
-    top: 5px;
-    right: 5px;
-    width: fit-content;
-    height: auto;
-    padding: 10px;
-    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin: 5vw;
     margin-top: 5vh;
 }
+
+/* barre de recherche */
+input{    
+    width: auto;
+    height: auto;
+    padding: 0.75rem;
+    border: var(--border);
+    border-radius: 15px;
+    background-color: var(--background-input);
+    font-size: 1rem;
+    color: var(--texte-color);    
+}
+
+/* bouton */
+.form_button{
+    padding: 10px;
+    
+    border: var(--border);
+    border-radius: 100%;
+    background-color: var(--background-input);
+}
+

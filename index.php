@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['sunrise'] = $sunriseLocale;
         $_SESSION['sunset'] = $sunsetLocale;
     } else {
-        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données.";
+        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Vérifiez son orthographe et ses tirets.";
     }
 }
 ?>
@@ -120,10 +120,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             determineBackgroundColor($_SESSION['heure'], $_SESSION['sunrise'], $_SESSION['sunset']) : ''; ?>">
 
     <div class="info">
+
         <form method="post" action="">
-            <label for="villeInput" hidden>Ville :</label>
+            <label for="villeInput" hidden>Ville</label>
             <input type="text" name="ville" id="villeInput" required>
-            <button type="submit">Afficher la météo</button>
+            
+            <button type="submit" class="form_button">
+                <img src="icons/loupe.svg" alt="icons de loupe pour rechercher">
+            </button>
         </form>
     
         <div class="resultat">
