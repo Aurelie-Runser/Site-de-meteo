@@ -1,35 +1,18 @@
-.hot-temperature {
-    background: fuchsia;
-  }
-  
-.cold-temperature {
-    background: blue;
-  }
-  
-.normal-temperature {
-    background: green;
-  }
-  
-body, .daytime {
-    background-color: #add8e6;
-  }
-  
-  .nighttime {
-    background-color: #000080;
-    color: #ffffff;
-  }
-  
-  .sunrise-sunset {
-    background-color: #f5deb3;
-  }
-  
-  
+/* import de police google font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+/* variables */
+@import url("style/root.css");
 
-/* $color_day_night: #95caff;
-$color_sunrise_set: #ffb795;
-$heure: 0!default; */
+/* background */
+@import url("style/fond.css");
+
+/* barre de recherche */
+@import url("style/recherche.css");
+
+/* case des résultats, infos */
+@import url("style/resultat.css");
+
 
 *{
     margin: 0;
@@ -37,20 +20,5 @@ $heure: 0!default; */
     box-sizing: border-box;
 }
 
-body{      
-    font-family: 'Raleway', sans-serif;
-    padding: 20px;
 
-}
-
-form{
-    border: blue solid 5px;
-    background-color: darkgray;
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    width: fit-content;
-    height: auto;
-    padding: 10px;
-}
 

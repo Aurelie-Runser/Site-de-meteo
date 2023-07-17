@@ -1,0 +1,12 @@
+
+form{
+    border: var(--zone-border);
+    background-color: darkgray;
+    top: 5px;
+    right: 5px;
+    width: fit-content;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5vh;
+}
