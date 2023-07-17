@@ -5,5 +5,16 @@
 }
 
 h1{
-    color: aqua;
+    color: fuchsia;
+}
+
+.formulaire{
+    border: red solid 2px;
+    background-color: darkgray;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: fit-content;
+    height: auto;
+    padding: 10px;
 }
