@@ -1,17 +1,17 @@
 /* import de police google font */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
-/* variables */
-@import url("style/root.css");
-
 /* background */
-@import url("style/fond.css");
+@import url("style/main.css");
 
 /* barre de recherche */
 @import url("style/recherche.css");
 
 /* case des résultats, infos */
 @import url("style/resultat.css");
+
+/* variables */
+@import url("style/root.css");
 
 
 *{

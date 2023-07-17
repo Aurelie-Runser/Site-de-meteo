@@ -17,3 +17,16 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .sunrise-sunset {
     background-color: #f5deb3;
 }
+
+h1{
+    display: none;
+    margin: 5% 0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+@media (min-width: 640px) {
+    h1{
+        display: block;
+    }
+}
