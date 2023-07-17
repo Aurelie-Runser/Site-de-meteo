@@ -41,12 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $temps = $data->weather[0]->main;
         $description = $data->weather[0]->description;
 
-        // Conversion des températures en degrés Celsius
+        // Conversion des températures en Kelvin en degrés Celsius
         $temperatureC = $data->main->temp - 273.15;
         $temp_ressentitC = $data->main->feels_like - 273.15;
         $temperature_minC = $data->main->temp_min - 273.15;
         $temperature_maxC = $data->main->temp_max - 273.15;
 
+        // Récupération de la pression, humidité, visibilité du vent et des nuages
         $pression = $data->main->pressure;
         $humidite = $data->main->humidity;
 
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $pourcentage_nuage = $data->clouds->all;
 
+        // Récupération de la pluit et neige s'il n'y en a pas, mettre la valeure à 0
         $pluie_1h = $data->rain->{"1h"} ?? 0;
         $pluie_3h = $data->rain->{"3h"} ?? 0;
 
@@ -67,8 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $timezoneOffset = $data->timezone;
 
         // Conversion de l'heure UTC en heure locale
-        $currentTime = time() + $timezoneOffset;
-        $heureLocale = date('H:i:s', $currentTime);
+        $heureLocale = date('H:i:s');
 
         // Récupération des heures de lever et coucher du soleil en heure locale
         $sunriseUTC = $data->sys->sunrise;
@@ -110,9 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site météo</title>
 
-    <link href="style/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
 </head>
-<body>
+
+<!-- La classe vérifie que les valeurs suivantes sont renseignées, si oui, récupère les valeurs et modifies la couleur du fond -->
+<body class="<?php echo (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ? determineBackgroundColor($_SESSION['heure'], $_SESSION['sunrise'], $_SESSION['sunset']) : ''; ?>">
 
     <form method="post" action="">
         <label for="villeInput" hidden>Ville :</label>
@@ -121,30 +125,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <div id="resultat">
-        <?php
+    <?php
         if (!empty($message)) {
             echo "<p>$message</p>";
         } elseif (isset($_SESSION['name'])) {
-            echo "Ville : " . $_SESSION['name'] . "<br>";
-            echo "Temps : " . $_SESSION['temps'] . "<br>";
-            echo "Description : " . $_SESSION['description'] . "<br><br>";
-            echo "Température : " . $_SESSION['temperature'] . " °C<br>";
-            echo "Température ressentie : " . $_SESSION['temp_ressentitC'] . " °C<br>";
-            echo "Température Minimum : " . $_SESSION['temperature_min'] . " °C<br>";
-            echo "Température Maximum : " . $_SESSION['temperature_max'] . " °C<br><br>";
-            echo "Pression Atmosphérique : " . $_SESSION['pression'] . " hPa<br>";
-            echo "Humidité : " . $_SESSION['humidite'] . "<br>";
-            echo "Visibilité : " . $_SESSION['visibilite'] . "<br><br>";
-            echo "Vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s<br>";
-            echo "Direction du vent : " . $_SESSION['direction_vent'] . " °<br><br>";
-            echo "Pourcentage de nuages : " . $_SESSION['pourcentage_nuage'] . "% du ciel couvert<br><br>";
-            echo "Pluie (1h) : " . $_SESSION['pluie_1h'] . " mm<br>";
-            echo "Pluie (3h) : " . $_SESSION['pluie_3h'] . " mm<br><br>";
-            echo "Neige (1h) : " . $_SESSION['neige_1h'] . " mm<br>";
-            echo "Neige (3h) : " . $_SESSION['neige_3h'] . " mm<br><br>";
-            echo "Heure de la dernière mesure : " . $_SESSION['heure'] . "<br>";
-            echo "Heure du lever du soleil : " . $_SESSION['sunrise'] . "<br>";
-            echo "Heure du coucher du soleil : " . $_SESSION['sunset'] . "<br>";
+
+            echo "<p>Ville : " . $_SESSION['name'] . "</p>";
+            echo "<p>Temps : " . $_SESSION['temps'] . "</p>";
+            echo "<p>Description : " . $_SESSION['description'] . "</p>";
+            echo "<br>";
+
+            echo "<p>Température : " . $_SESSION['temperature'] . " °C</p>";
+            echo "<p>Température ressentie : " . $_SESSION['temp_ressentitC'] . " °C</p>";
+            echo "<p>Température Minimum : " . $_SESSION['temperature_min'] . " °C</p>";
+            echo "<p>Température Maximum : " . $_SESSION['temperature_max'] . " °C</p>";
+            echo "<br>";
+
+            echo "<p>Pression Atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
+            echo "<p>Humidité : " . $_SESSION['humidite'] . "</p>";
+            echo "<p>Visibilité : " . $_SESSION['visibilite'] . "</p>";
+            echo "<br>";
+
+            echo "<p>Vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
+            echo "<p>Direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
+            echo "<br>";
+
+            echo "<p>Pourcentage de nuages : " . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
+            echo "<br>";
+
+            if ($_SESSION['pluie_1h'] != 0){
+                echo "<p>Pluie (1h) : " . $_SESSION['pluie_1h'] . " mm</p>";
+                echo "<p>Pluie (3h) : " . $_SESSION['pluie_3h'] . " mm</p>";
+                echo "<br>";
+            };
+            
+            if ($_SESSION['neige_1h'] != 0){
+                echo "<p>Neige (1h) : " . $_SESSION['neige_1h'] . " mm</p>";
+                echo "<p>Neige (3h) : " . $_SESSION['neige_3h'] . " mm</p>";
+                echo "<br>";
+            };
+
+            echo "<p>Heure de la dernière mesure : " . $_SESSION['heure'] . "<p>";
+            echo "<p>Heure du lever du soleil : " . $_SESSION['sunrise'] . "<p>";
+            echo "<p>Heure du coucher du soleil : " . $_SESSION['sunset'] . "<p>";
 
             // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
             session_unset();
@@ -152,5 +175,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         ?>
     </div>
+
 </body>
 </html>
+
+<?php
+function determineBackgroundColor($heureActuelle, $heureLeverSoleil, $heureCoucherSoleil) {
+    $heureActuelle = DateTime::createFromFormat('H:i:s', $heureActuelle);
+    $heureLeverSoleil = DateTime::createFromFormat('H:i:s', $heureLeverSoleil);
+    $heureCoucherSoleil = DateTime::createFromFormat('H:i:s', $heureCoucherSoleil);
+  
+    $heureLeverSoleil->modify('+1 hour');
+    $heureCoucherSoleil->modify('-1 hour');
+  
+    if ($heureActuelle > $heureLeverSoleil && $heureActuelle < $heureCoucherSoleil) {
+        return 'daytime';
+    } elseif ($heureActuelle < $heureLeverSoleil || $heureActuelle > $heureCoucherSoleil) {
+        return 'nighttime';
+    } else {
+        return 'sunrise-sunset';
+    }
+  }
+  
+  
+
+?>
