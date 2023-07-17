@@ -4,11 +4,12 @@
     box-sizing: border-box;
 }
 
-h1{
-    color: fuchsia;
+body{
+    background: aqua;
+    font-family: 'Raleway', sans-serif;
 }
 
-.formulaire{
+form{
     border: red solid 2px;
     background-color: darkgray;
     position: fixed;
@@ -18,3 +19,4 @@ h1{
     height: auto;
     padding: 10px;
 }
+
