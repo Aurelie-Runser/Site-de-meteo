@@ -116,18 +116,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <!-- La classe vérifie que les valeurs suivantes sont renseignées, si oui, récupère les valeurs et modifies la couleur du fond -->
-<body class="<?php (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ?
+<body class="<?php echo (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ?
             determineBackgroundColor($_SESSION['heure'], $_SESSION['sunrise'], $_SESSION['sunset']) : ''; ?>">
 
     <div class="info">
 
-        <?php if (isset($_SESSION['name'])){
-            echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span></h1>";
-        } else {
-            echo "<h1>Ma Météo</h1>";
-        }
-        ?>
-
+        <!-- barre pour rechercher une ville -->
         <form method="post" action="">
             <label for="villeInput" hidden>Ville</label>
             <input type="text" name="ville" id="villeInput" required>
@@ -136,7 +130,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="icons/loupe.svg" alt="icons de loupe pour rechercher">
             </button>
         </form>
+
+        <!-- titre qui change en fonction de la ville -->
+        <?php 
+            if (isset($_SESSION['name'])){
+                echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span></h1>";
+            } else {
+                echo "<h1>Ma Météo</h1>";
+            }
+        ?>
     
+
         <div class="resultat">
             <?php
                 if (!empty($message)) {
@@ -186,9 +190,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     session_unset();
                     session_destroy();
                 }
-                ?>
-            </div>
+            ?>
         </div>
+    </div>
 
 </body>
 </html>

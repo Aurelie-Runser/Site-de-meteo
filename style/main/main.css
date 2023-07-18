@@ -1,7 +1,16 @@
 @charset "UTF-8";
-
 body {
   background-color: #add8e6;
+  /* titre de la page "Ma Météo" */
+}
+body h1 {
+  margin: 5% 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+body h1 span {
+  font-size: 3.5rem;
+  text-decoration: underline;
 }
 
 /* Couleurs du fond.
@@ -10,31 +19,25 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .daytime {
   background-color: #add8e6;
 }
+.daytime h1 span {
+  color: #235e71;
+}
 
 .nighttime {
   background-color: #000080;
-  color: #ffffff;
+}
+.nighttime h1 {
+  color: #eee;
+}
+.nighttime h1 span {
+  color: #b3b3ff;
 }
 
 .sunrise-sunset {
-  background-color: #f5deb3;
+  background-color: #f5c9b3;
 }
-
-/* titre de la page "Ma Météo" */
-h1 {
-  display: none;
-  margin: 5% 0;
-  font-size: 3rem;
-  font-weight: bold;
-}
-@media (min-width: 640px) {
-  h1 {
-    display: block;
-  }
-}
-h1 span {
-  text-decoration: underline;
-  color: red;
+.sunrise-sunset h1 span {
+  color: #682c0e;
 }
 
 /*# sourceMappingURL=main.css.map */

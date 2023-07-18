@@ -1,36 +1,62 @@
+@import "../variables.scss";
+
+$bg-d: #add8e6;
+$bg-n: #000080;
+$bg-s: #f5c9b3;
+
 body{      
-    background-color: #add8e6;
+    background-color: $bg-d;
+    
+    /* titre de la page "Ma Météo" */
+    h1{
+        margin: 5% 0;
+        font-size: 3rem;
+        font-weight: bold;  
+    
+        span{
+            font-size: 3.5rem;
+            text-decoration: underline;
+        }
+    }
+
 }
 
 /* Couleurs du fond.
 Seule une est appeler en fonction de l'heure déterminer grace à la fonction php "determineBackgroundColor" dans index.php
 */
 .daytime {
-    background-color: #add8e6;
+    background-color: $bg-d;
+    
+    h1{
+        
+        span{
+            color: darken($bg-d, 50%);
+        }
+    }   
 }
 
+
 .nighttime {
-    background-color: #000080;
-    color: #ffffff;
+    background-color: $bg-n;
+    
+    h1{
+        color: $txt-color-light;
+        span{
+            color: lighten($bg-n, 60%);
+        }
+    }
 }
 
 .sunrise-sunset {
-    background-color: #f5deb3;
+    background-color: $bg-s;
+    
+    h1{
+        
+        span{
+            color: darken($bg-s, 60%);
+        }
+    }   
 }
 
-/* titre de la page "Ma Météo" */
-h1{
-    display: none;
-    margin: 5% 0;
-    font-size: 3rem;
-    font-weight: bold;
 
-    @media (min-width: 640px) {
-        display: block;
-    }
 
-    span{
-        text-decoration: underline;
-        color: red;
-    }
-}
