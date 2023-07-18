@@ -1,0 +1,7 @@
+.resultat{
+    margin: 5vw 0;
+    padding: 20px;
+    border: var(--border);
+    background-color: var(--background);
+    
+}

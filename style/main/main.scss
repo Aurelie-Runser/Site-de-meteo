@@ -18,15 +18,19 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
     background-color: #f5deb3;
 }
 
+/* titre de la page "Ma Météo" */
 h1{
     display: none;
     margin: 5% 0;
     font-size: 3rem;
     font-weight: bold;
-}
 
-@media (min-width: 640px) {
-    h1{
+    @media (min-width: 640px) {
         display: block;
+    }
+
+    span{
+        text-decoration: underline;
+        color: red;
     }
 }

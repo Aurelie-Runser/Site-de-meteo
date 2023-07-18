@@ -116,12 +116,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <!-- La classe vérifie que les valeurs suivantes sont renseignées, si oui, récupère les valeurs et modifies la couleur du fond -->
-<body class="<?php echo (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ?
+<body class="<?php (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ?
             determineBackgroundColor($_SESSION['heure'], $_SESSION['sunrise'], $_SESSION['sunset']) : ''; ?>">
 
     <div class="info">
 
-        <h1>Ma Météo</h1>
+        <?php if (isset($_SESSION['name'])){
+            echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span></h1>";
+        } else {
+            echo "<h1>Ma Météo</h1>";
+        }
+        ?>
 
         <form method="post" action="">
             <label for="villeInput" hidden>Ville</label>

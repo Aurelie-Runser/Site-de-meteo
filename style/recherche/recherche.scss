@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+/* marge de tous les éléments */
+.info{
+    margin: 5vw;
+    margin-top: 5vh;  
+
+    /* alignement du formulaire (barre de recherche et bouton) */
+    form{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        max-width: 320px;
+
+        /* barre de recherche */
+        input{    
+            width: auto;
+            height: auto;
+            padding: 0.75rem;
+            border: $border;
+            border-radius: 15px;
+            background-color: $bg-input;
+            font-size: 1rem;
+            color: $txt-color;    
+        }
+
+        /* bouton */
+        .form_button{
+            padding: 10px;
+            
+            border: $border;
+            border-radius: 100%;
+            background-color: $bg-input;
+
+            /* suppression du bouton en dessous d'une certaine taille d'écran */
+            @media (max-width: 315px) {
+                display: none;
+                
+            }
+        }
+
+    }
+    
+}
+

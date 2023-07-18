@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+  background-color: #add8e6;
+}
+
+/* Couleurs du fond.
+Seule une est appeler en fonction de l'heure déterminer grace à la fonction php "determineBackgroundColor" dans index.php
+*/
+.daytime {
+  background-color: #add8e6;
+}
+
+.nighttime {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+.sunrise-sunset {
+  background-color: #f5deb3;
+}
+
+/* titre de la page "Ma Météo" */
+h1 {
+  display: none;
+  margin: 5% 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+@media (min-width: 640px) {
+  h1 {
+    display: block;
+  }
+}
+h1 span {
+  text-decoration: underline;
+  color: red;
+}
+
+/*# sourceMappingURL=main.css.map */
