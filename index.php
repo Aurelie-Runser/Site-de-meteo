@@ -148,68 +148,81 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php
                 if (!empty($message)) {
                     echo "<div class='resultat_msg'>";
-                    ?>
-                    <img class='msg_icon' src="public/question.svg" alt="point d'intérogation"/>
-                    <?php
+                    echo "<img class='msg_icon' src='public/question.svg' alt='icon d'un point d'intérogation'/>";
                     echo "<p class='msg_txt'>$message</p>";
                     echo "</div>";
 
                 } elseif (isset($_SESSION['name'])) {
 
-                    echo "<div>";
-                        echo "<div>";
-                            echo "<img src='public/sun.svg' alt=''>";
-                            echo "<p>" . $_SESSION['description'] . "</p>";
-                            echo "<p>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
-                        echo "</div>";
-                        
-                        echo "<div>";
-                            echo "<p>" . $_SESSION['temperature'] . " °C</p>";
-                            echo "<p>ressentie " . $_SESSION['temp_ressentitC'] . " °C</p>";
-                            echo "<p>min : " . $_SESSION['temperature_min'] . " °C / max : " . $_SESSION['temperature_max'] . " °C</p>";
-                            echo "<p>" . $_SESSION['heure'] . "<p>";
+                    echo "<div class='temperature'>";
+                        echo "<img src='public/sun.svg' alt='icon d'un soleil'>";
+                            
+                        echo "<div class='temp_txt'>";
+                            echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
+                            echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
+                            echo "<p class='txt_minmax'>" . $_SESSION['temperature_min'] . "°C / " . $_SESSION['temperature_max'] . "°C</p>";
+                            echo "<p class='txt_heure'>" . $_SESSION['heure'] . "<p>";
+                            echo "<p class='txt_nuage'>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
                         echo "</div>";  
                     echo "</div>";  
+
+                    echo "<br>";                        
                         
-                        
-                    echo "<div>";
-                        echo "<img src='public/pressure.svg' alt=''>";
-                        echo "<p>pression atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
-                        echo "<img src='public/humidity.svg' alt=''>";
-                        echo "<p>humidité : " . $_SESSION['humidite'] . "g/m3</p>";
-                        echo "<img src='public/visibility.svg' alt=''>";
-                        echo "<p>visibilité : " . $_SESSION['visibilite'] . "m</p>";
-                    echo "</div>";
-                        
-                    echo "<div>";
-                        echo "<img src='public/wind.svg' alt=''>";
-                        echo "<p>vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
-                        echo "<p>direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
-                    echo "</div>";
-                        
-                        
-                    if ($_SESSION['pluie_1h'] != 0){
-                        echo "<div>";
-                        echo "<p>pluie tombées en 1 heure : " . $_SESSION['pluie_1h'] . " mm</p>";
-                        echo "<p>pluie tombées en 3 heures : " . $_SESSION['pluie_3h'] . " mm</p>";
+                    echo "<div class='infos'>";
+                        echo "<div class='info_pression'>";
+                            echo "<img src='public/pressure.svg' alt='icon de la pression atatmosphérique'>";
+                            echo "<p>pression atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
                         echo "</div>";
-                    };
-                    
-                    if ($_SESSION['neige_1h'] != 0){
-                        echo "<div>";
-                        echo "<p>neige tombées en 1 heure : " . $_SESSION['neige_1h'] . " mm</p>";
-                        echo "<p>neige tombées en 3 heures : " . $_SESSION['neige_3h'] . " mm</p>";
+                        
+                        echo "<div class='info_humidity'>";
+                            echo "<img src='public/humidity.svg' alt='icon de l'humidité'>";
+                            echo "<p>humidité : " . $_SESSION['humidite'] . "g/m3</p>";
                         echo "</div>";
-                    };
-                    
-                    echo "<div>";
-                        echo "<img src='public/sunrise.svg' alt=''>";
-                        echo "<p>heure du lever du soleil aujourd'hui : " . $_SESSION['sunrise'] . "<p>";
-                        echo "<img src='public/sunset.svg' alt=''>";
-                        echo "<p>heure du coucher du soleil aujourd'hui : " . $_SESSION['sunset'] . "<p>";
+
+                        echo "<div class='info_visibility'>";
+                            echo "<img src='public/visibility.svg' alt='icon de la visibilité'>";
+                            echo "<p>visibilité : " . $_SESSION['visibilite'] . "m</p>";
+                        echo "</div>";    
                     echo "</div>";
-        
+                                        
+                    echo "<br>";
+                    
+                    echo "<div class='wind'>";
+                        echo "<img src='public/wind.svg' alt='icon du vent'>";
+                        echo "<p class='wind_speed'>vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
+                        echo "<p class='wind_deg'>direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
+                    echo "</div>";                        
+                    
+                    echo "<br>";
+
+                    echo "<div class='sunrise-set'>";
+                        echo "<div class='sunrise'>";
+                            echo "<img src='public/sunrise.svg' alt='icon du levé du soleil'>";
+                            echo "<p>heure du lever du soleil aujourd'hui : " . $_SESSION['sunrise'] . "<p>";
+                        echo "</div>";
+                        
+                        echo "<div class='sunset'>";
+                            echo "<img src='public/sunset.svg' alt='icon du couché du soleil'>";
+                            echo "<p>heure du coucher du soleil aujourd'hui : " . $_SESSION['sunset'] . "<p>";
+                        echo "</div>";
+                    echo "</div>";
+                    
+                    echo "<br>";
                     // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
+                    // if ($_SESSION['pluie_1h'] != 0){
+                        echo "<div class='rain'>";
+                            echo "<p class='rain_1h'>pluie tombées en 1 heure : " . $_SESSION['pluie_1h'] . " mm</p>";
+                            echo "<p class='rain_3h'>pluie tombées en 3 heures : " . $_SESSION['pluie_3h'] . " mm</p>";
+                    //     echo "</div>";
+                    // };
+                    
+                    // if ($_SESSION['neige_1h'] != 0){
+                        echo "<div class='snow'>";
+                            echo "<p class='snow_1h'>neige tombées en 1 heure : " . $_SESSION['neige_1h'] . " mm</p>";
+                            echo "<p class='snow_3h'>neige tombées en 3 heures : " . $_SESSION['neige_3h'] . " mm</p>";
+                        echo "</div>";
+                    // };
+
                     session_unset();
                     session_destroy();
                 }
