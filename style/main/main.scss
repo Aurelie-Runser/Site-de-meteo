@@ -2,6 +2,7 @@
 
 body{      
     background-color: $bg-d;
+    color: $txt-color;
     
     /* titre de la page "Ma Météo" */
     h1{
@@ -38,6 +39,7 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
             
 .nighttime {
     background-color: $bg-n;
+    color: $txt-color-light;
     
     h1{
         color: $txt-color-light;
@@ -51,9 +53,6 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
         color: lighten($bg-n, 60%);
     }
     
-    p{
-        color: $txt-color-light;
-    }
 }
 
 .sunrise-sunset {
