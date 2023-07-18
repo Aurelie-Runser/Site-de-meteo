@@ -4,6 +4,9 @@
 /* principales (fond, titre) */
 @import url("style/main/main.css");
 
+/* message d'erreur affiché lorsque la ville n'a pas été trouvé */
+@import url("style/message/message.css");
+
 /* barre de recherche */
 @import url("style/recherche/recherche.css");
 

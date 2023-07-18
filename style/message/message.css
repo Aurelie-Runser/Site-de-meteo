@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* affichage du message si la ville rechercher n'est pas trouvée */
+.resultat_msg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 0;
+  /* changement d'alignement sur les grand écrans */
+  /* style du texte */
+  /* style de l'icon point d'intérogation */
+}
+@media screen and (min-width: 865px) {
+  .resultat_msg {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+.resultat_msg .msg_txt {
+  text-align: center;
+  font-weight: bold;
+  /* alignement du texte sur les grand écrans */
+}
+@media screen and (min-width: 865px) {
+  .resultat_msg .msg_txt {
+    text-align: left;
+  }
+}
+.resultat_msg .msg_icon {
+  margin: auto;
+  width: 10rem;
+  transform: rotate(10deg);
+}
+
+/*# sourceMappingURL=message.css.map */
