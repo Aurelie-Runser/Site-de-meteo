@@ -10,25 +10,45 @@
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
 .resultat .temperature {
-  border: 2px red solid;
   width: 100%;
+  max-width: 550px;
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+@media (min-width: 640px) {
+  .resultat .temperature {
+    gap: 20px;
+  }
 }
 .resultat .temperature img {
   width: 50%;
+}
+@media (min-width: 640px) {
+  .resultat .temperature .temp_txt {
+    font-size: 1.5rem;
+  }
 }
 .resultat .temperature .temp_txt .txt_temperature {
   margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: bold;
 }
+@media (min-width: 640px) {
+  .resultat .temperature .temp_txt .txt_temperature {
+    font-size: 4rem;
+  }
+}
 .resultat .temperature .temp_txt .txt_ressentie,
 .resultat .temperature .temp_txt .txt_nuage {
   font-size: 0.8rem;
   font-style: italic;
+}
+@media (min-width: 640px) {
+  .resultat .temperature .temp_txt .txt_ressentie,
+  .resultat .temperature .temp_txt .txt_nuage {
+    font-size: 1rem;
+  }
 }
 .resultat .temperature .temp_txt .txt_minmax {
   font-weight: bold;
@@ -38,6 +58,12 @@
   margin: 0.5rem 0;
   font-size: 1.5rem;
   font-weight: bold;
+}
+@media (min-width: 640px) {
+  .resultat .temperature .temp_txt .txt_heure {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+  }
 }
 
 /*# sourceMappingURL=resultat.css.map */

@@ -11,30 +11,44 @@
     background-color: $bg-txt;
 
     .temperature{
-        border: 2px red solid;
-
         width: 100%;
+        max-width: 550px;
         height: auto;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+
+        @media (min-width: #{$sm}){
+            gap: 20px;
+        }
 
         img{
             width: 50%;
         }
-
+        
         .temp_txt{
 
+            @media (min-width: #{$sm}){
+                font-size: 1.5rem;
+            }
+            
             .txt_temperature{
                 margin-bottom: 1rem;
                 font-size: 2.5rem;
                 font-weight: bold;
+
+                @media (min-width: #{$sm}){
+                    font-size: 4rem;
+                }
             }
 
             .txt_ressentie,
             .txt_nuage{
                 font-size: 0.80rem;
                 font-style: italic;
+
+                @media (min-width: #{$sm}){
+                    font-size: 1rem;
+                }
             }
 
             .txt_minmax{
@@ -47,6 +61,11 @@
                 margin: 0.5rem 0;
                 font-size: 1.5rem;
                 font-weight: bold;
+
+                @media (min-width: #{$sm}){
+                    margin: 1rem 0;
+                    font-size: 2.5rem;
+                }
             }
         }
     }
