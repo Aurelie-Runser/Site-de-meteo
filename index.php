@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
     $apiKey = "af0bed8924751e07bce0f22544b547e7";
 
-    $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&appid=" . $apiKey;
+    $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&lang=fr&appid=" . $apiKey;
 
     // Initialisation de cURL
     $curl = curl_init();
@@ -68,8 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Récupération du fuseau horaire pour la ville
         $timezoneOffset = $data->timezone;
 
-        // Conversion de l'heure UTC en heure locale
-        $heureLocale = date('H:i:s');
+        // Définition du fuseau horaire par défaut
+        date_default_timezone_set('UTC');
+
+        // Conversion de l'heure actuelle en heure locale
+        $heureLocale = date('H:i:s', time() + $timezoneOffset);
 
         // Récupération des heures de lever et coucher du soleil en heure locale
         $sunriseUTC = $data->sys->sunrise;
@@ -154,43 +157,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } elseif (isset($_SESSION['name'])) {
                     
                     echo "<p>" . $_SESSION['temperature'] . " °C</p>";
-                    echo "<p>Température ressentie : " . $_SESSION['temp_ressentitC'] . " °C</p>";
-                    echo "<p>Température Minimum : " . $_SESSION['temperature_min'] . " °C</p>";
-                    echo "<p>Température Maximum : " . $_SESSION['temperature_max'] . " °C</p>";
+                    echo "<p>ressentie " . $_SESSION['temp_ressentitC'] . " °C</p>";
+                    echo "<p>minimum : " . $_SESSION['temperature_min'] . " °C</p>";
+                    echo "<p>maximum : " . $_SESSION['temperature_max'] . " °C</p>";
                     echo "<br>";  
 
-                    echo "<p>Temps : " . $_SESSION['temps'] . "</p>";
-                    echo "<p>Description : " . $_SESSION['description'] . "</p>";
+                    echo "<p>" . $_SESSION['description'] . "</p>";
                     echo "<br>";
 
-                    echo "<p>Pourcentage de nuages : " . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
+                    echo "<p>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
                     echo "<br>";
                     
-                    echo "<p>Pression Atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
-                    echo "<p>Humidité : " . $_SESSION['humidite'] . "</p>";
-                    echo "<p>Visibilité : " . $_SESSION['visibilite'] . "</p>";
+                    echo "<p>pression Atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
+                    echo "<p>humidité : " . $_SESSION['humidite'] . "g/m3</p>";
+                    echo "<p>visibilité : " . $_SESSION['visibilite'] . "m</p>";
                     echo "<br>";
         
-                    echo "<p>Vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
-                    echo "<p>Direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
+                    echo "<p>vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
+                    echo "<p>direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
                     echo "<br>";
         
         
                     if ($_SESSION['pluie_1h'] != 0){
-                        echo "<p>Pluie (1h) : " . $_SESSION['pluie_1h'] . " mm</p>";
-                        echo "<p>Pluie (3h) : " . $_SESSION['pluie_3h'] . " mm</p>";
+                        echo "<p>pluie tombées en 1 heure : " . $_SESSION['pluie_1h'] . " mm</p>";
+                        echo "<p>pluie tombées en 3 heures : " . $_SESSION['pluie_3h'] . " mm</p>";
                         echo "<br>";
                     };
                     
                     if ($_SESSION['neige_1h'] != 0){
-                        echo "<p>Neige (1h) : " . $_SESSION['neige_1h'] . " mm</p>";
-                        echo "<p>Neige (3h) : " . $_SESSION['neige_3h'] . " mm</p>";
+                        echo "<p>neige tombées en 1 heure : " . $_SESSION['neige_1h'] . " mm</p>";
+                        echo "<p>neige tombées en 3 heures : " . $_SESSION['neige_3h'] . " mm</p>";
                         echo "<br>";
                     };
         
-                    echo "<p>Heure de la dernière mesure : " . $_SESSION['heure'] . "<p>";
-                    echo "<p>Heure du lever du soleil : " . $_SESSION['sunrise'] . "<p>";
-                    echo "<p>Heure du coucher du soleil : " . $_SESSION['sunset'] . "<p>";
+                    echo "<p>heure de la mesure : " . $_SESSION['heure'] . "<p>";
+                    echo "<p>heure du lever du soleil aujourd'hui : " . $_SESSION['sunrise'] . "<p>";
+                    echo "<p>heure du coucher du soleil aujourd'hui : " . $_SESSION['sunset'] . "<p>";
         
                     // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
                     session_unset();
@@ -211,12 +213,15 @@ function determineBackgroundColor($heureActuelle, $heureLeverSoleil, $heureCouch
     $heureLeverSoleil = DateTime::createFromFormat('H:i:s', $heureLeverSoleil);
     $heureCoucherSoleil = DateTime::createFromFormat('H:i:s', $heureCoucherSoleil);
   
-    $heureLeverSoleil->modify('+1 hour');
-    $heureCoucherSoleil->modify('-1 hour');
+    $heureLeverSoleilStart = $heureLeverSoleil->modify('-2 hour');
+    $heureLeverSoleilEnd = $heureLeverSoleil->modify('+2 hour');
+
+    $heureCoucherSoleilStart = $heureCoucherSoleil->modify('-2 hour');
+    $heureCoucherSoleilEnd = $heureCoucherSoleil->modify('+2 hour');
   
-    if ($heureActuelle > $heureLeverSoleil && $heureActuelle < $heureCoucherSoleil) {
+    if ( $heureLeverSoleilEnd < $heureActuelle && $heureActuelle < $heureCoucherSoleilStart) {
         return 'daytime';
-    } elseif ($heureActuelle < $heureLeverSoleil || $heureActuelle > $heureCoucherSoleil) {
+    } elseif ($heureActuelle < $heureLeverSoleilStart || $heureCoucherSoleilEnd < $heureActuelle) {
         return 'nighttime';
     } else {
         return 'sunrise-sunset';
