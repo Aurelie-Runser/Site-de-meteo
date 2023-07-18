@@ -155,6 +155,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "</div>";
 
                 } elseif (isset($_SESSION['name'])) {
+
+                    ?>
+
+                    <?php
                     
                     echo "<p>" . $_SESSION['temperature'] . " °C</p>";
                     echo "<p>ressentie " . $_SESSION['temp_ressentitC'] . " °C</p>";
@@ -209,16 +213,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // modifie la couleur du fond en fonction de l'heure
 function determineBackgroundColor($heureActuelle, $heureLeverSoleil, $heureCoucherSoleil) {
+    // formatage des heures pour pouvoir les manipuler
     $heureActuelle = DateTime::createFromFormat('H:i:s', $heureActuelle);
     $heureLeverSoleil = DateTime::createFromFormat('H:i:s', $heureLeverSoleil);
     $heureCoucherSoleil = DateTime::createFromFormat('H:i:s', $heureCoucherSoleil);
   
-    $heureLeverSoleilStart = $heureLeverSoleil->modify('-2 hour');
-    $heureLeverSoleilEnd = $heureLeverSoleil->modify('+2 hour');
-
-    $heureCoucherSoleilStart = $heureCoucherSoleil->modify('-2 hour');
-    $heureCoucherSoleilEnd = $heureCoucherSoleil->modify('+2 hour');
+    // création de la plage horaire pendant laquelle le soleil se lève
+    $heureLeverSoleilStart = clone $heureLeverSoleil;
+    $heureLeverSoleilStart->modify('-1 hour');
+    $heureLeverSoleilEnd = clone $heureLeverSoleil;
+    $heureLeverSoleilEnd->modify('+1 hour');
+    
+    // création de la plage horaire pendant laquelle le soleil se couche
+    $heureCoucherSoleilStart = clone $heureCoucherSoleil;
+    $heureCoucherSoleilStart->modify('-1 hour');
+    $heureCoucherSoleilEnd = clone $heureCoucherSoleil;
+    $heureCoucherSoleilEnd->modify('+1 hour');
   
+    // affection de la couleur du fonc en fonction de l'heure
     if ( $heureLeverSoleilEnd < $heureActuelle && $heureActuelle < $heureCoucherSoleilStart) {
         return 'daytime';
     } elseif ($heureActuelle < $heureLeverSoleilStart || $heureCoucherSoleilEnd < $heureActuelle) {
