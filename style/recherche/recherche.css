@@ -10,7 +10,8 @@
   display: flex;
   justify-content: space-between;
   width: auto;
-  max-width: 320px;
+  max-width: 350px;
+  gap: 10px;
   /* barre de recherche */
   /* bouton */
 }
@@ -24,17 +25,14 @@
   font-size: 1rem;
   color: #333;
 }
-.info form .form_button {
+.info form button {
   padding: 10px;
   border: #eee solid 3px;
-  border-radius: 100%;
-  background-color: rgba(238, 238, 238, 0.3137254902);
-  /* suppression du bouton en dessous d'une certaine taille d'écran */
+  border-radius: 15px;
+  background-color: #eee;
 }
-@media (max-width: 315px) {
-  .info form .form_button {
-    display: none;
-  }
+.info form button:hover {
+  background-color: rgba(238, 238, 238, 0.5019607843);
 }
 
 /*# sourceMappingURL=recherche.css.map */
