@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (!empty($message)) {
                     echo "<div class='resultat_msg'>";
                     ?>
-                    <img class='msg_icon' src="icons/question.svg" alt="point d'intérogation"/>
+                    <img class='msg_icon' src="public/question.svg" alt="point d'intérogation"/>
                     <?php
                     echo "<p class='msg_txt'>$message</p>";
                     echo "</div>";
