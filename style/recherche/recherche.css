@@ -13,6 +13,7 @@
   max-width: 350px;
   gap: 10px;
   /* barre de recherche */
+  /* ATTENTION : la couleur du texte est définit dans "main.scss" puisque dépend de la couleur de fond */
   /* bouton */
 }
 .info form input {
@@ -23,7 +24,7 @@
   border-radius: 15px;
   background-color: rgba(238, 238, 238, 0.3137254902);
   font-size: 1rem;
-  color: #333;
+  font-style: italic;
 }
 .info form button {
   padding: 10px;

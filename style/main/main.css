@@ -22,6 +22,9 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .daytime h1 span {
   color: #235e71;
 }
+.daytime input {
+  color: #235e71;
+}
 
 .nighttime {
   background-color: #000080;
@@ -32,11 +35,20 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .nighttime h1 span {
   color: #b3b3ff;
 }
+.nighttime input {
+  color: #b3b3ff;
+}
+.nighttime p {
+  color: #eee;
+}
 
 .sunrise-sunset {
   background-color: #f5c9b3;
 }
 .sunrise-sunset h1 span {
+  color: #682c0e;
+}
+.sunrise-sunset input {
   color: #682c0e;
 }
 

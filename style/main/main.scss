@@ -28,18 +28,31 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
         span{
             color: darken($bg-d, 50%);
         }
-    }   
+    }
+
+    input{
+        color: darken($bg-d, 50%);
+    }
 }
-
-
+            
+            
 .nighttime {
     background-color: $bg-n;
     
     h1{
         color: $txt-color-light;
+                    
         span{
             color: lighten($bg-n, 60%);
         }
+    }
+    
+    input{
+        color: lighten($bg-n, 60%);
+    }
+    
+    p{
+        color: $txt-color-light;
     }
 }
 
@@ -52,6 +65,10 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
             color: darken($bg-s, 60%);
         }
     }   
+
+    input{
+        color: darken($bg-s, 60%);
+    }
 }
 
 
