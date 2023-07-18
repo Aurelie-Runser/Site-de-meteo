@@ -10,10 +10,6 @@
 /* case des résultats, infos */
 @import url("style/resultat/resultat.css");
 
-/* variables */
-@import url("style/root.css");
-
-
 *{
     margin: 0;
     padding: 0;
