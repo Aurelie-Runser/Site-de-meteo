@@ -1,11 +1,54 @@
 @import "../variables.scss";
 
-/* zone du résultat */
+/* zone du résultat 
+    ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
+*/
 .resultat{
-    margin: 5vw 0;
+    margin: 4.5vw 0;
     padding: 20px;
     border: $border;
     border-radius: $border-radius;
     background-color: $bg-txt;
+
+    .temperature{
+        border: 2px red solid;
+
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img{
+            width: 50%;
+        }
+
+        .temp_txt{
+
+            .txt_temperature{
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+            .txt_ressentie,
+            .txt_nuage{
+                font-size: 0.80rem;
+                font-style: italic;
+            }
+
+            .txt_minmax{
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            // ATTENTION : la couleur de l'heure est définit dans "main.scss" car dépend de l'heure
+            .txt_heure{
+                margin: 0.5rem 0;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
     
 }

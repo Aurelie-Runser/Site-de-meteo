@@ -30,8 +30,13 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
             color: darken($bg-d, 50%);
         }
     }
-
+    
     input{
+        color: darken($bg-d, 50%);
+    }
+    
+    // couleur de l'heure affichée. Se trouve dans le fichier "resultat.scss"  
+    .txt_heure{
         color: darken($bg-d, 50%);
     }
 }
@@ -53,6 +58,11 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
         color: lighten($bg-n, 60%);
     }
     
+    // couleur de l'heure affichée. Se trouve dans le fichier "resultat.scss"
+    .txt_heure{
+        color: $bg-n;
+    }
+    
 }
 
 .sunrise-sunset {
@@ -66,6 +76,11 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
     }   
 
     input{
+        color: darken($bg-s, 60%);
+    }
+    
+    // couleur de l'heure affichée. Se trouve dans le fichier "resultat.scss"
+    .txt_heure{
         color: darken($bg-s, 60%);
     }
 }

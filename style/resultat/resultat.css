@@ -1,11 +1,43 @@
 @charset "UTF-8";
-/* zone du résultat */
+/* zone du résultat 
+    ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
+*/
 .resultat {
-  margin: 5vw 0;
+  margin: 4.5vw 0;
   padding: 20px;
   border: #eee solid 3px;
   border-radius: 15px;
   background-color: rgba(238, 238, 238, 0.5019607843);
+}
+.resultat .temperature {
+  border: 2px red solid;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.resultat .temperature img {
+  width: 50%;
+}
+.resultat .temperature .temp_txt .txt_temperature {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.resultat .temperature .temp_txt .txt_ressentie,
+.resultat .temperature .temp_txt .txt_nuage {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.resultat .temperature .temp_txt .txt_minmax {
+  font-weight: bold;
+  font-style: italic;
+}
+.resultat .temperature .temp_txt .txt_heure {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=resultat.css.map */
