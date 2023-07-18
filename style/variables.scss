@@ -1,12 +1,23 @@
+// taille d'écran (utilisé pour les @media)
+$sm : 640px;
+$md : 768px;
+$lg : 1024px;
+$xl : 1280px;
+$xl2 : 1536px;
+
+// les couleurs du fond en fonction de l'heure
 $bg-d: #add8e6;
 $bg-n: #000080;
 $bg-s: #f5c9b3;
 
+// les bords des zones
 $border: #eee solid 3px;
 $border-radius: 15px;
 
+// les couleurs des fonds des zones
 $bg-txt: #eeeeee80;
 $bg-input: #eeeeee50;
 
+// les couleurs des textes globaux en fonction de l'heure
 $txt-color: #333;
 $txt-color-light: #eee;
