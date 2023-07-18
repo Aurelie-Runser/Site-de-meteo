@@ -58,27 +58,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $pourcentage_nuage = $data->clouds->all;
 
-        // Récupération de la pluit et neige s'il n'y en a pas, mettre la valeure à 0
+        // Récupération de la pluie et neige s'il n'y en a pas, mettre la valeure à 0
         $pluie_1h = $data->rain->{"1h"} ?? 0;
         $pluie_3h = $data->rain->{"3h"} ?? 0;
 
         $neige_1h = $data->snow->{"1h"} ?? 0;
         $neige_3h = $data->snow->{"3h"} ?? 0;
 
+        // Récupération du pays de la ville
+        $pays = $data->sys->country;
+        
+        // Définition du fuseau horaire par défaut
+        date_default_timezone_set('UTC');
+        
         // Récupération du fuseau horaire pour la ville
         $timezoneOffset = $data->timezone;
 
-        // Définition du fuseau horaire par défaut
-        date_default_timezone_set('UTC');
-
         // Conversion de l'heure actuelle en heure locale
         $heureLocale = date('H:i:s', time() + $timezoneOffset);
-
+        
         // Récupération des heures de lever et coucher du soleil en heure locale
         $sunriseUTC = $data->sys->sunrise;
         $sunsetUTC = $data->sys->sunset;
         $sunriseLocale = date('H:i:s', $sunriseUTC + $timezoneOffset);
         $sunsetLocale = date('H:i:s', $sunsetUTC + $timezoneOffset);
+        
 
         // Enregistrement des données dans la session
         $_SESSION['name'] = $name;
@@ -98,9 +102,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['pluie_3h'] = $pluie_3h;
         $_SESSION['neige_1h'] = $neige_1h;
         $_SESSION['neige_3h'] = $neige_3h;
-        $_SESSION['heure'] = $heureLocale;
         $_SESSION['sunrise'] = $sunriseLocale;
         $_SESSION['sunset'] = $sunsetLocale;
+        $_SESSION['pays'] = $pays;
+        $_SESSION['heure'] = $heureLocale;
     } else {
         $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Vérifiez son orthographe et pensez aux tirets.";
     }
@@ -137,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- titre qui change en fonction de la ville -->
         <?php 
             if (isset($_SESSION['name'])){
-                echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span></h1>";
+                echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span>, " .  $_SESSION['pays'] . "</h1>";
             } else {
                 echo "<h1>Ma Météo</h1>";
             }
