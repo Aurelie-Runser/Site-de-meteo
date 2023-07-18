@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- barre pour rechercher une ville -->
         <form method="post" action="">
             <label for="villeInput" hidden>Ville</label>
-            <input type="text" name="ville" id="villeInput" placeholder="Paris, Londre..." required>
+            <input type="text" name="ville" id="villeInput" placeholder="Paris, London..." required>
             
             <button type="submit" hidden>
                 Rechercher
