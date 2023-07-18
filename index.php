@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['sunrise'] = $sunriseLocale;
         $_SESSION['sunset'] = $sunsetLocale;
     } else {
-        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Vérifiez son orthographe et ses tirets.";
+        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Vérifiez son orthographe et pensez aux tirets.";
     }
 }
 ?>
@@ -144,20 +144,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="resultat">
             <?php
                 if (!empty($message)) {
-                    echo "<p>$message</p>";
+                    echo "<div class='resultat_msg'>";
+                    ?>
+                    <img class='msg_icon' src="icons/question.svg" alt="point d'intérogation"/>
+                    <?php
+                    echo "<p class='msg_txt'>$message</p>";
+                    echo "</div>";
+
                 } elseif (isset($_SESSION['name'])) {
-        
-                    echo "<p>Ville : " . $_SESSION['name'] . "</p>";
-                    echo "<p>Temps : " . $_SESSION['temps'] . "</p>";
-                    echo "<p>Description : " . $_SESSION['description'] . "</p>";
-                    echo "<br>";
-        
-                    echo "<p>Température : " . $_SESSION['temperature'] . " °C</p>";
+                    
+                    echo "<p>" . $_SESSION['temperature'] . " °C</p>";
                     echo "<p>Température ressentie : " . $_SESSION['temp_ressentitC'] . " °C</p>";
                     echo "<p>Température Minimum : " . $_SESSION['temperature_min'] . " °C</p>";
                     echo "<p>Température Maximum : " . $_SESSION['temperature_max'] . " °C</p>";
+                    echo "<br>";  
+
+                    echo "<p>Temps : " . $_SESSION['temps'] . "</p>";
+                    echo "<p>Description : " . $_SESSION['description'] . "</p>";
                     echo "<br>";
-        
+
+                    echo "<p>Pourcentage de nuages : " . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
+                    echo "<br>";
+                    
                     echo "<p>Pression Atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
                     echo "<p>Humidité : " . $_SESSION['humidite'] . "</p>";
                     echo "<p>Visibilité : " . $_SESSION['visibilite'] . "</p>";
@@ -167,8 +175,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<p>Direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
                     echo "<br>";
         
-                    echo "<p>Pourcentage de nuages : " . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
-                    echo "<br>";
         
                     if ($_SESSION['pluie_1h'] != 0){
                         echo "<p>Pluie (1h) : " . $_SESSION['pluie_1h'] . " mm</p>";

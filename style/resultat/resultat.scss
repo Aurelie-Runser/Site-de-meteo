@@ -1,0 +1,44 @@
+@import "../variables.scss";
+
+/* zone du résultat */
+.resultat{
+    margin: 5vw 0;
+    padding: 20px;
+    border: $border;
+    background-color: $bg-txt;
+
+    /* affichage du message si la ville rechercher n'est pas trouvée */
+    .resultat_msg{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem 0;
+        
+        /* changement d'alignement sur les grand écrans */
+        @media screen and (min-width: 865px) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        
+        /* style du texte */
+        .msg_txt{
+            text-align: center;
+            font-weight: bold;
+            color: darken($bg-d, 50%);
+
+            /* alignement du texte sur les grand écrans */
+            @media screen and (min-width: 865px) {
+                text-align: left;
+            }
+        }
+
+        /* style de l'icon point d'intérogation */
+        .msg_icon{
+            margin: auto;
+            width: 10rem;
+            transform: rotate(10deg);
+        }
+    }
+    
+}

@@ -1,7 +1,43 @@
-.resultat{
-    margin: 5vw 0;
-    padding: 20px;
-    border: var(--border);
-    background-color: var(--background);
-    
+@charset "UTF-8";
+/* zone du résultat */
+.resultat {
+  margin: 5vw 0;
+  padding: 20px;
+  border: #eee solid 3px;
+  background-color: rgba(238, 238, 238, 0.5019607843);
+  /* affichage du message si la ville rechercher n'est pas trouvée */
 }
+.resultat .resultat_msg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 0;
+  /* changement d'alignement sur les grand écrans */
+  /* style du texte */
+  /* style de l'icon point d'intérogation */
+}
+@media screen and (min-width: 865px) {
+  .resultat .resultat_msg {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+.resultat .resultat_msg .msg_txt {
+  text-align: center;
+  font-weight: bold;
+  color: #235e71;
+  /* alignement du texte sur les grand écrans */
+}
+@media screen and (min-width: 865px) {
+  .resultat .resultat_msg .msg_txt {
+    text-align: left;
+  }
+}
+.resultat .resultat_msg .msg_icon {
+  margin: auto;
+  width: 10rem;
+  transform: rotate(10deg);
+}
+
+/*# sourceMappingURL=resultat.css.map */
