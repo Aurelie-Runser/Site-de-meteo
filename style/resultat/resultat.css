@@ -2,7 +2,7 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat .resultat_tableau .infos, .resultat .temperature {
+.resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
   display: flex;
   align-items: center;
   width: auto;
@@ -21,8 +21,9 @@
   font-size: 1rem;
 }
 .resultat .temperature {
-  width: 600px;
   height: fit-content;
+  flex-basis: 550px;
+  min-width: 250px;
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
 @media (min-width: 640px) {
@@ -77,17 +78,19 @@
 .resultat .resultat_tableau {
   border: red solid 2px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 500px;
-  min-width: 250px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   flex: auto;
+  flex-basis: 300px;
+  max-width: 640px;
+  min-width: 250px;
 }
 .resultat .resultat_tableau .infos {
   justify-content: space-around;
-  max-width: 500px;
-  background: #eee;
+  flex-basis: 500px;
+  max-width: 640px;
+  min-width: 250px;
 }
 .resultat .resultat_tableau .infos span {
   display: block;
@@ -100,6 +103,56 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+.resultat .resultat_tableau .wind {
+  justify-content: space-around;
+  max-width: max-content;
+  height: auto;
+  gap: 20px;
+}
+@media (min-width: 600px) {
+  .resultat .resultat_tableau .wind {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 967px) {
+  .resultat .resultat_tableau .wind {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1300px) {
+  .resultat .resultat_tableau .wind {
+    flex-direction: column;
+  }
+}
+.resultat .resultat_tableau .wind div {
+  width: 100%;
+  gap: 10px;
+}
+@media (min-width: 600px) {
+  .resultat .resultat_tableau .wind div {
+    text-align: center;
+  }
+  .resultat .resultat_tableau .wind div span {
+    display: none;
+  }
+}
+@media (min-width: 967px) {
+  .resultat .resultat_tableau .wind div {
+    text-align: left;
+  }
+  .resultat .resultat_tableau .wind div span {
+    display: inline;
+  }
+}
+@media (min-width: 1300px) {
+  .resultat .resultat_tableau .wind div {
+    text-align: center;
+  }
+  .resultat .resultat_tableau .wind div span {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=resultat.css.map */

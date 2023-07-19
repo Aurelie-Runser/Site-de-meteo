@@ -18,19 +18,20 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: $gap-big;
     margin: 4.5vw auto;
     font-size: 1rem;
 
     // 1er zone : température avec grand icon
     .temperature{
         @extend %zone;
-        width: 600px;
         height: fit-content;
+        flex-basis: 550px;
+        min-width: 250px;
         background-color: $bg-txt;
 
         @media (#{$ecran-sm}){
-            gap: 20px;
+            gap: $gap-big;
         }
 
         img{
@@ -85,21 +86,24 @@
     .resultat_tableau{
         border: $border-test;
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        max-width: 500px;
-        min-width: 250px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $gap-big;
         flex: auto;
+        flex-basis: 300px;
+        max-width: 640px;
+        min-width: 250px;
         
         // 2ème zone : pression + humidite + visibilité
+        // ATTENTION : la couleur du fond, et des icons est définit dans main.scss
         .infos{
             @extend %zone;
             justify-content: space-around;
-            max-width: 500px;
-            background: $bg-txt-plein;
+            flex-basis: 500px;
+            max-width: 640px;
+            min-width: 250px;
 
-            // séprataion entre chaque valeur
+            // séparation entre chaque valeur
             span{
                 display: block;
                 width: 1px;
@@ -112,16 +116,59 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 10px;
+                gap: $gap-small;
+            }
+        }
 
+        // 3ème zone : vent
+        .wind{
+            @extend %zone;
+            justify-content: space-around;
+            max-width: max-content;
+            height: auto;
+            gap: $gap-big;
 
-
-                // .pression_icon{
-                // }
-
+            @media (min-width : 600px){
+                display: flex;
+                flex-direction: column;
             }
 
-            
+            @media (min-width : 967px){
+                flex-direction: row;
+            }
+
+            @media (min-width : 1300px){
+                flex-direction: column;
+            }
+
+            div{
+                width: 100%;
+                gap: $gap-small;
+                
+                @media (min-width : 600px){
+                    text-align: center;
+
+                    span{
+                        display: none;
+                    }
+                }
+
+                @media (min-width : 967px){
+                    text-align: left;
+
+                    span{
+                        display: inline;
+                    }
+                }
+                                
+                @media (min-width : 1300px){
+                    text-align: center;
+
+                    span{
+                        display: none;
+                    }
+                }
+            }
         }
     }
 

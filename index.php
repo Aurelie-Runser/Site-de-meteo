@@ -212,8 +212,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // 3ème zone : vent
                     echo "<div class='wind'>";
                         echo "<img src='public/wind.svg' alt='icon du vent'>";
-                        echo "<p class='wind_speed'>vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
-                        echo "<p class='wind_deg'>direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
+
+                        echo "<div>";
+                            echo "<p class='wind_speed'><span>vitesse du vent : </span>" . $_SESSION['vitesse_vent'] . " m/s</p>";
+                            echo "<p class='wind_deg'><span>direction du vent : </span>" . $_SESSION['direction_vent'] . " °</p>";
+                        echo "</div>";
                     echo "</div>";                        
                     
                     // 4ème zone : heure de lever et coucher du soleil
