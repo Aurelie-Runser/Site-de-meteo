@@ -212,7 +212,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                  
                     // 3ème zone : vent
                     echo "<div class='wind'>";
-                        echo "<img src='public/wind.svg' alt='icon du vent'>";
+                        echo "<svg class='wind_icon'>";   
+                            echo "<use xlink:href='public/wind.svg#wind' alt='icon de la pluie'/>";
+                        echo "</svg>";
 
                         echo "<div>";
                             echo "<p class='wind_speed'>
@@ -239,7 +241,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 echo "<use xlink:href='public/rain_only.svg#rain_only' alt='icon de la pluie'/>";
                             echo "</svg>";
 
-
                             echo "<div>";
                                 echo "<p class='rain_txt'>pluie tombée</p>";
 
@@ -258,7 +259,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
                     // 6ème zone : la neige
                     // si != 0, afficher la neige
-                    if ($_SESSION['neige_1h'] != 0){
+                    // if ($_SESSION['neige_1h'] != 0){
                         echo "<div class='rain-snow'>";
                             echo "<svg class='snow_icon'>";   
                                 echo "<use xlink:href='public/snow.svg#snow' alt='icon de la neige'/>";
@@ -279,10 +280,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 </p>";
                             echo "</div>";
                         echo "</div>";
-                    };
+                    // };
                     
                     // 4ème zone : heure de lever et coucher du soleil
                     echo "<div class='sunrise-set'>";
+
                         echo "<div class='sunrise'>";
                             echo "<img src='public/sunrise.svg' alt='icon du levé du soleil'>";
                             echo "<p>" . $_SESSION['sunrise'] . "<p>";

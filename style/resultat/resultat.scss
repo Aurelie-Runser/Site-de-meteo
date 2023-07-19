@@ -96,7 +96,7 @@
         gap: $gap-big;
         flex: auto;
         flex-basis: 300px;
-        max-width: 640px;
+        max-width: fit-content;
         min-width: 250px;
 
         @media (min-width : 967px) {
@@ -136,7 +136,6 @@
         // 3ème zone : vent
         .wind{
             @extend %zone;
-            justify-content: space-around;
             max-width: max-content;
             height: auto;
             gap: $gap-big;
