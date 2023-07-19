@@ -13,6 +13,14 @@ body h1 span {
   font-size: 3.5rem;
   text-decoration: underline;
 }
+body .resultat svg {
+  width: 50px;
+  height: 50px;
+}
+body .resultat .pression_icon,
+body .resultat .visibility_icon {
+  stroke: #333;
+}
 
 /* Couleurs du fond.
 Seule une est appeler en fonction de l'heure déterminer grace à la fonction php "determineBackgroundColor" dans index.php
@@ -45,6 +53,13 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 }
 .nighttime .txt_heure {
   color: #000080;
+}
+.nighttime .resultat .infos {
+  background: #333;
+}
+.nighttime .resultat .infos .pression_icon,
+.nighttime .resultat .infos .visibility_icon {
+  stroke: #eee;
 }
 
 .sunrise-sunset {
