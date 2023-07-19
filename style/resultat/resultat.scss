@@ -98,6 +98,10 @@
         flex-basis: 300px;
         max-width: 640px;
         min-width: 250px;
+
+        @media (min-width : 967px) {
+            justify-content: left;
+        }
         
         // 2ème zone : pression + humidite + visibilité
         // ATTENTION : la couleur du fond, et des icons est définit dans main.scss
@@ -203,6 +207,36 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: 5px;
+                font-weight: bold;
+            }
+        }
+
+        // 5ème zone : la pluie
+        .rain{
+            @extend %zone;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            flex: auto;
+            flex-basis: 200px;
+            min-width: 80px;
+            max-width: 250px;
+            gap: $gap-small;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                gap: 5px;
+
+                .rain_txt{
+                    font-weight: bold;
+                }
+
+                span{
+                    font-weight: normal;
+                    font-style: italic;
+                }
             }
         }
 

@@ -2,7 +2,7 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat .resultat_tableau .sunrise-set, .resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
+.resultat .resultat_tableau .rain, .resultat .resultat_tableau .sunrise-set, .resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
   display: flex;
   align-items: center;
   width: auto;
@@ -90,6 +90,11 @@
   max-width: 640px;
   min-width: 250px;
 }
+@media (min-width: 967px) {
+  .resultat .resultat_tableau {
+    justify-content: left;
+  }
+}
 .resultat .resultat_tableau .infos {
   justify-content: space-around;
   flex-basis: 500px;
@@ -175,6 +180,30 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
+  font-weight: bold;
+}
+.resultat .resultat_tableau .rain {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  flex: auto;
+  flex-basis: 200px;
+  min-width: 80px;
+  max-width: 250px;
+  gap: 10px;
+}
+.resultat .resultat_tableau .rain div {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 5px;
+}
+.resultat .resultat_tableau .rain div .rain_txt {
+  font-weight: bold;
+}
+.resultat .resultat_tableau .rain div span {
+  font-weight: normal;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=resultat.css.map */
