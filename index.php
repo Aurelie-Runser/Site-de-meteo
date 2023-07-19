@@ -127,7 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="<?php echo (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ?
             determineBackgroundColor($_SESSION['heure'], $_SESSION['sunrise'], $_SESSION['sunset']) : ''; ?>">
 
-    <div class="info">
 
         <!-- barre pour rechercher une ville -->
         <form method="post" action="">
@@ -251,7 +250,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             ?>
         </div>
-    </div>
 
 </body>
 </html>

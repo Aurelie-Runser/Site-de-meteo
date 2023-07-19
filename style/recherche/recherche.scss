@@ -1,46 +1,40 @@
 @import "../variables.scss";
 
-/* marge de tous les éléments */
-.info{
-    margin: 5vw;
-    margin-top: 5vh;  
 
-    /* alignement du formulaire (barre de recherche et bouton) */
-    form{
-        position: relative;
-        display: flex;
-        justify-content: space-between;
+
+/* alignement du formulaire (barre de recherche et bouton) */
+form{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    max-width: 350px;
+    gap: 10px;
+
+    /* barre de recherche */
+    /* ATTENTION : la couleur du texte est définit dans "main.scss" puisque dépend de la couleur de fond */
+    input{    
         width: auto;
-        max-width: 350px;
-        gap: 10px;
-
-        /* barre de recherche */
-        /* ATTENTION : la couleur du texte est définit dans "main.scss" puisque dépend de la couleur de fond */
-        input{    
-            width: auto;
-            height: auto;
-            padding: 0.75rem;
-            border: $border;
-            border-radius: 10px;
-            background-color: $bg-input;
-            font-size: 1rem;
-            font-style: italic;
-        }
-
-        /* bouton */
-        button{
-            padding: 10px;
-            
-            border: #eee solid 3px;
-            border-radius: $border-radius;
-            background-color: #eee;
-
-            &:hover{
-                background-color: #eeeeee80;
-            }
-        }
-
+        height: auto;
+        padding: 0.75rem;
+        border: $border;
+        border-radius: 10px;
+        background-color: $bg-input;
+        font-size: 1rem;
+        font-style: italic;
     }
-    
+
+    /* bouton */
+    button{
+        padding: 10px;
+        
+        border: #eee solid 3px;
+        border-radius: $border-radius;
+        background-color: #eee;
+
+        &:hover{
+            background-color: #eeeeee80;
+        }
+    }
 }
 

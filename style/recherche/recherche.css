@@ -1,11 +1,6 @@
 @charset "UTF-8";
-/* marge de tous les éléments */
-.info {
-  margin: 5vw;
-  margin-top: 5vh;
-  /* alignement du formulaire (barre de recherche et bouton) */
-}
-.info form {
+/* alignement du formulaire (barre de recherche et bouton) */
+form {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -16,7 +11,7 @@
   /* ATTENTION : la couleur du texte est définit dans "main.scss" puisque dépend de la couleur de fond */
   /* bouton */
 }
-.info form input {
+form input {
   width: auto;
   height: auto;
   padding: 0.75rem;
@@ -26,13 +21,13 @@
   font-size: 1rem;
   font-style: italic;
 }
-.info form button {
+form button {
   padding: 10px;
   border: #eee solid 3px;
   border-radius: 15px;
   background-color: #eee;
 }
-.info form button:hover {
+form button:hover {
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
 

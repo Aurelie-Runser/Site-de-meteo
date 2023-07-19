@@ -1,6 +1,9 @@
 @import "../variables.scss";
 
 body{      
+    padding: 5vw;
+    padding-top: 5vh; 
+
     background-color: $bg-d;
     color: $txt-color;
     
@@ -16,19 +19,20 @@ body{
         }
     }
 
-    // taille et couleur des svg
-    .resultat{
+        // taille et couleur des svg
+        .resultat{
 
-        svg{
-            width: 50px;
-            height: 50px;
-        }
+            svg{
+                width: 50px;
+                height: 50px;
+            }
 
-        .pression_icon,
-        .visibility_icon{
-            stroke: $txt-color;
+            .pression_icon,
+            .visibility_icon{
+                stroke: $txt-color;
+            }
         }
-    }
+    
 
 }
 
