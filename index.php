@@ -126,51 +126,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- La classe vérifie que les valeurs suivantes sont renseignées, si oui, récupère les valeurs et modifies la couleur du fond -->
 <body class="<?php echo (isset($_SESSION['heure']) && isset($_SESSION['sunrise']) && isset($_SESSION['sunset'])) ?
             determineBackgroundColor($_SESSION['heure'], $_SESSION['sunrise'], $_SESSION['sunset']) : ''; ?>">
+        
+    <!-- barre pour rechercher une ville -->
+    <form method="post" action="">
+        <label for="villeInput" hidden>Ville</label>
+        <input type="text" name="ville" id="villeInput" placeholder="Paris, FR / Londres, GB..." required>
+        
+        <button type="submit" hidden>
+            Rechercher
+        </button>
+    </form>
 
-
-        <!-- barre pour rechercher une ville -->
-        <form method="post" action="">
-            <label for="villeInput" hidden>Ville</label>
-            <input type="text" name="ville" id="villeInput" placeholder="Paris, FR / Londres, GB..." required>
-            
-            <button type="submit" hidden>
-                Rechercher
-            </button>
-        </form>
-
-        <!-- titre qui change en fonction de la ville -->
-        <?php 
-            if (isset($_SESSION['name'])){
-                echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span>, " .  $_SESSION['pays'] . "</h1>";
-            } else {
-                echo "<h1>Ma Météo</h1>";
-            }
-        ?>
+    <!-- titre qui change en fonction de la ville -->
+    <?php 
+        if (isset($_SESSION['name'])){
+            echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span>, " .  $_SESSION['pays'] . "</h1>";
+        } else {
+            echo "<h1>Ma Météo</h1>";
+        }
+    ?>
     
 
-        <div class="resultat">
-            <?php
-                if (!empty($message)) {
-                    echo "<div class='resultat_msg'>";
-                    echo "<img class='msg_icon' src='public/question.svg' alt='icon d'un point d'intérogation'/>";
-                    echo "<p class='msg_txt'>$message</p>";
-                    echo "</div>";
+    <div class="resultat">
+        <?php
+            if (!empty($message)) {
+                echo "<div class='resultat_msg'>";
+                echo "<img class='msg_icon' src='public/question.svg' alt='icon d'un point d'intérogation'/>";
+                echo "<p class='msg_txt'>$message</p>";
+                echo "</div>";
 
-                } elseif (isset($_SESSION['name'])) {
+            } elseif (isset($_SESSION['name'])) {
 
-                    // 1er zone : température avec grand icon
-                    echo "<div class='temperature'>";
-                        echo "<img src='public/sun.svg' alt='icon du vent'>";
-                    
-                        echo "<div class='temp_txt'>";
-                            echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
-                            echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
-                            echo "<p class='txt_minmax'>" . $_SESSION['temperature_min'] . "°C / " . $_SESSION['temperature_max'] . "°C</p>";
-                            echo "<p class='txt_heure'>" . $_SESSION['heure'] . "<p>";
-                            echo "<p class='txt_nuage'>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
-                        echo "</div>";  
+                // 1er zone : température avec grand icon
+                echo "<div class='temperature'>";
+                    echo "<img src='public/sun.svg' alt='icon du vent'>";
+                
+                    echo "<div class='temp_txt'>";
+                        echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
+                        echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
+                        echo "<p class='txt_minmax'>" . $_SESSION['temperature_min'] . "°C / " . $_SESSION['temperature_max'] . "°C</p>";
+                        echo "<p class='txt_heure'>" . $_SESSION['heure'] . "<p>";
+                        echo "<p class='txt_nuage'>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
                     echo "</div>";  
+                echo "</div>";  
                         
+                echo "<div class='resultat_tableau'>";
+
                     // 2ème zone : pression + humidite + visibilité
                     echo "<div class='infos'>";
                         echo "<div class='info_pression'>";
@@ -207,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "<p>" . $_SESSION['visibilite'] . " m</p>";
                         echo "</div>";    
                     echo "</div>";
-                                 
+                                                 
                     // 3ème zone : vent
                     echo "<div class='wind'>";
                         echo "<img src='public/wind.svg' alt='icon du vent'>";
@@ -244,13 +245,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "</div>";
                     // };
 
+                echo "</div>";
+
+
                     // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
                     session_unset();
                     session_destroy();
                 }
             ?>
         </div>
-
+                
 </body>
 </html>
 

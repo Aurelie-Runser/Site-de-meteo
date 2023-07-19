@@ -6,15 +6,22 @@
   display: flex;
   align-items: center;
   width: auto;
-  max-width: 600px;
   height: auto;
-  margin: 4.5vw 0;
   padding: 20px;
   border: #eee solid 3px;
   border-radius: 15px;
 }
 
+.resultat {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 4.5vw auto;
+}
 .resultat .temperature {
+  width: 600px;
+  height: fit-content;
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
 @media (min-width: 640px) {
@@ -68,6 +75,7 @@
 }
 .resultat .infos {
   justify-content: space-around;
+  max-width: 500px;
   background: #eee;
 }
 .resultat .infos span {

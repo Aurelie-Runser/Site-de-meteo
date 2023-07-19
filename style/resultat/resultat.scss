@@ -8,19 +8,24 @@
     display: flex;
     align-items: center;
     width: auto;
-    max-width: 600px;
     height: auto;
-    margin: 4.5vw 0;
     padding: 20px;
     border: $border;
     border-radius: $border-radius;
 }
 
 .resultat{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 4.5vw auto;
 
     // 1er zone : température avec grand icon
     .temperature{
         @extend %zone;
+        width: 600px;
+        height: fit-content;
         background-color: $bg-txt;
 
         @media (#{$ecran-sm}){
@@ -80,6 +85,7 @@
     .infos{
         @extend %zone;
         justify-content: space-around;
+        max-width: 500px;
         background: $bg-txt-plein;
 
         // séprataion entre chaque valeur
