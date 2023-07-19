@@ -20,6 +20,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin: 4.5vw auto;
+    font-size: 1rem;
 
     // 1er zone : température avec grand icon
     .temperature{
@@ -81,35 +82,47 @@
         }
     }
     
-    // 2ème zone : pression + humidite + visibilité
-    .infos{
-        @extend %zone;
-        justify-content: space-around;
+    .resultat_tableau{
+        border: $border-test;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
         max-width: 500px;
-        background: $bg-txt-plein;
-
-        // séprataion entre chaque valeur
-        span{
-            display: block;
-            width: 1px;
-            height: 75px;
-            background: lighten($txt-color, 50%);
-        }
-
-        // ce qui est commun au 3 valeurs (alignement + taille de l'icon)
-        div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-
-
-
-            // .pression_icon{
-            // }
-
-        }
-
+        min-width: 250px;
+        flex: auto;
         
+        // 2ème zone : pression + humidite + visibilité
+        .infos{
+            @extend %zone;
+            justify-content: space-around;
+            max-width: 500px;
+            background: $bg-txt-plein;
+
+            // séprataion entre chaque valeur
+            span{
+                display: block;
+                width: 1px;
+                height: 75px;
+                background: lighten($txt-color, 50%);
+            }
+
+            // ce qui est commun au 3 valeurs (alignement + taille de l'icon)
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+
+
+                // .pression_icon{
+                // }
+
+            }
+
+            
+        }
     }
+
 }

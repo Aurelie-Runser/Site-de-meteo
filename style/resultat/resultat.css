@@ -2,7 +2,7 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat .infos, .resultat .temperature {
+.resultat .resultat_tableau .infos, .resultat .temperature {
   display: flex;
   align-items: center;
   width: auto;
@@ -18,6 +18,7 @@
   flex-wrap: wrap;
   gap: 20px;
   margin: 4.5vw auto;
+  font-size: 1rem;
 }
 .resultat .temperature {
   width: 600px;
@@ -73,18 +74,28 @@
     font-size: 2.5rem;
   }
 }
-.resultat .infos {
+.resultat .resultat_tableau {
+  border: red solid 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 250px;
+  flex: auto;
+}
+.resultat .resultat_tableau .infos {
   justify-content: space-around;
   max-width: 500px;
   background: #eee;
 }
-.resultat .infos span {
+.resultat .resultat_tableau .infos span {
   display: block;
   width: 1px;
   height: 75px;
   background: #b3b3b3;
 }
-.resultat .infos div {
+.resultat .resultat_tableau .infos div {
   display: flex;
   flex-direction: column;
   align-items: center;
