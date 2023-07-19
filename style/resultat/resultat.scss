@@ -147,13 +147,16 @@
                 flex-direction: row;
             }
 
-            @media (min-width : 1300px){
+            @media (min-width : 1110px){
                 flex-direction: column;
             }
 
             // affiche/cache le texte en fonction de la taille d'écran
             div{
-                gap: $gap-small;
+
+                .wind_speed{
+                    margin-bottom: $gap-small;
+                }
 
                 span{
                     font-weight: bold;
@@ -175,7 +178,7 @@
                     }
                 }
                                 
-                @media (min-width : 1300px){
+                @media (min-width : 1110px){
                     text-align: center;
 
                     span{
@@ -186,6 +189,22 @@
             }
         }
 
+        // 4ème zone : heure de lever et coucher du soleil
+        .sunrise-set{
+            @extend %zone;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 300px;
+            border-width: 3px;
+            background: $bg-txt;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+            }
+        }
 
     }
 

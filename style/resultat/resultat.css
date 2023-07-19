@@ -2,7 +2,7 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
+.resultat .resultat_tableau .sunrise-set, .resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
   display: flex;
   align-items: center;
   width: auto;
@@ -128,13 +128,13 @@
     flex-direction: row;
   }
 }
-@media (min-width: 1300px) {
+@media (min-width: 1110px) {
   .resultat .resultat_tableau .wind {
     flex-direction: column;
   }
 }
-.resultat .resultat_tableau .wind div {
-  gap: 10px;
+.resultat .resultat_tableau .wind div .wind_speed {
+  margin-bottom: 10px;
 }
 .resultat .resultat_tableau .wind div span {
   font-weight: bold;
@@ -155,13 +155,26 @@
     display: inline;
   }
 }
-@media (min-width: 1300px) {
+@media (min-width: 1110px) {
   .resultat .resultat_tableau .wind div {
     text-align: center;
   }
   .resultat .resultat_tableau .wind div span {
     display: none;
   }
+}
+.resultat .resultat_tableau .sunrise-set {
+  justify-content: space-around;
+  width: 100%;
+  max-width: 300px;
+  border-width: 3px;
+  background: rgba(238, 238, 238, 0.5019607843);
+}
+.resultat .resultat_tableau .sunrise-set div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
 }
 
 /*# sourceMappingURL=resultat.css.map */
