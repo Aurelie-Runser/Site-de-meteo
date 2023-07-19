@@ -25,7 +25,6 @@
     // 1er zone : température avec grand icon
     .temperature{
         @extend %zone;
-        height: fit-content;
         flex-basis: 550px;
         min-width: 250px;
         border-width: 5px;
@@ -89,14 +88,13 @@
     }
     
     .resultat_tableau{
-        border: $border-test;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: $gap-big;
         flex: auto;
         flex-basis: 300px;
-        max-width: fit-content;
+        max-width: 630px;
         min-width: 250px;
 
         @media (min-width : 967px) {

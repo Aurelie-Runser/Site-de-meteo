@@ -21,7 +21,6 @@
   font-size: 1rem;
 }
 .resultat .temperature {
-  height: fit-content;
   flex-basis: 550px;
   min-width: 250px;
   border-width: 5px;
@@ -80,14 +79,13 @@
   }
 }
 .resultat .resultat_tableau {
-  border: red solid 2px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   flex: auto;
   flex-basis: 300px;
-  max-width: fit-content;
+  max-width: 630px;
   min-width: 250px;
 }
 @media (min-width: 967px) {
