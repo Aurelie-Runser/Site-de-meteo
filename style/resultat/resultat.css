@@ -8,7 +8,7 @@
   width: auto;
   height: auto;
   padding: 20px;
-  border: #eee solid 3px;
+  border: #eee solid 1px;
   border-radius: 15px;
 }
 
@@ -24,6 +24,7 @@
   height: fit-content;
   flex-basis: 550px;
   min-width: 250px;
+  border-width: 5px;
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
 @media (min-width: 640px) {

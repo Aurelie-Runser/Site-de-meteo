@@ -28,6 +28,7 @@
         height: fit-content;
         flex-basis: 550px;
         min-width: 250px;
+        border-width: 5px;
         background-color: $bg-txt;
 
         @media (#{$ecran-sm}){
