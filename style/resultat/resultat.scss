@@ -133,6 +133,7 @@
             height: auto;
             gap: $gap-big;
 
+            // aligne le texte en fonction de la taille d'écran
             @media (min-width : 600px){
                 display: flex;
                 flex-direction: column;
@@ -146,9 +147,9 @@
                 flex-direction: column;
             }
 
+            // affiche/cache le texte en fonction de la taille d'écran
             div{
                 gap: $gap-small;
-                // font-weight: bold;
 
                 span{
                     font-weight: bold;
