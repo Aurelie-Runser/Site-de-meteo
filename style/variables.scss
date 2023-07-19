@@ -11,6 +11,10 @@ $ecran-lg : "min-width: #{$lg}";
 $ecran-xl : "min-width: #{$xl}";
 $ecran-xl2 : "min-width: #{$xl2}";
 
+// gap
+$gap-small : 10px;
+$gap-big : 20px;
+
 // les couleurs du fond en fonction de l'heure
 $bg-d: #add8e6;
 $bg-n: #000080;
