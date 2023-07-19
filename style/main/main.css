@@ -16,18 +16,22 @@ body h1 span {
   text-decoration: underline;
 }
 body .resultat .infos,
-body .resultat .wind {
+body .resultat .wind,
+body .resultat .rain {
   background: #eee;
 }
 body .resultat .infos svg,
-body .resultat .wind svg {
+body .resultat .wind svg,
+body .resultat .rain svg {
   width: 50px;
   height: 50px;
 }
 body .resultat .infos .pression_icon,
 body .resultat .infos .visibility_icon,
 body .resultat .wind .pression_icon,
-body .resultat .wind .visibility_icon {
+body .resultat .wind .visibility_icon,
+body .resultat .rain .pression_icon,
+body .resultat .rain .visibility_icon {
   stroke: #333;
 }
 
@@ -64,13 +68,16 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
   color: #000080;
 }
 .nighttime .resultat .infos,
-.nighttime .resultat .wind {
+.nighttime .resultat .wind,
+.nighttime .resultat .rain {
   background: #333;
 }
 .nighttime .resultat .infos .pression_icon,
 .nighttime .resultat .infos .visibility_icon,
 .nighttime .resultat .wind .pression_icon,
-.nighttime .resultat .wind .visibility_icon {
+.nighttime .resultat .wind .visibility_icon,
+.nighttime .resultat .rain .pression_icon,
+.nighttime .resultat .rain .visibility_icon {
   stroke: #eee;
 }
 

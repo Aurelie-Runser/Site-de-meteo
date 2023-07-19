@@ -23,7 +23,8 @@ body{
             
         // changement de couleur des icons
         .infos,
-        .wind{
+        .wind,
+        .rain{
             background: $bg-txt-plein;
             
             svg{
@@ -92,7 +93,8 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 
         // changement de couleur des icons
         .infos,
-        .wind{
+        .wind,
+        .rain{
             background: $bg-txt-plein-light;
 
             .pression_icon,
