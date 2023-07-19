@@ -104,6 +104,9 @@
   align-items: center;
   gap: 10px;
 }
+.resultat .resultat_tableau .infos div .info_titre {
+  font-weight: bold;
+}
 .resultat .resultat_tableau .wind {
   justify-content: space-around;
   max-width: max-content;
@@ -127,8 +130,10 @@
   }
 }
 .resultat .resultat_tableau .wind div {
-  width: 100%;
   gap: 10px;
+}
+.resultat .resultat_tableau .wind div span {
+  font-weight: bold;
 }
 @media (min-width: 600px) {
   .resultat .resultat_tableau .wind div {

@@ -175,37 +175,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // 2ème zone : pression + humidite + visibilité
                     echo "<div class='infos'>";
                         echo "<div class='info_pression'>";
-                            echo "<p>pression</p>";
+                            echo "<p class='info_titre'>pression</p>";
 
                             echo "<svg class='pression_icon'>";   
                                 echo "<use xlink:href='public/pressure.svg#pressure' alt='icon de la pression atatmosphérique'/>";
                             echo "</svg>";
 
-                            echo "<p>" . $_SESSION['pression'] . " hPa</p>";
+                            echo "<p class='info_donne'>" . $_SESSION['pression'] . " hPa</p>";
                         echo "</div>";
 
                         echo "<span></span>";
                         
                         echo "<div class='info_humidity'>";
-                            echo "<p>humidité</p>";
+                            echo "<p class='info_titre'>humidité</p>";
 
                             echo "<svg class='humidity_icon'>";   
                                 echo "<use xlink:href='public/humidity.svg#humidity' alt='icon de l'humidité'/>";
                             echo "</svg>";  
 
-                            echo "<p>" . $_SESSION['humidite'] . " g/m3</p>";
+                            echo "<p class='info_donne'>" . $_SESSION['humidite'] . " g/m3</p>";
                         echo "</div>";
 
                         echo "<span></span>";
 
                         echo "<div class='info_visibility'>";
-                            echo "<p>visibilité</p>";
+                            echo "<p class='info_titre'>visibilité</p>";
                             
                             echo "<svg class='visibility_icon'>";   
                                 echo "<use xlink:href='public/visibility.svg#visibility' alt='icon de la visibilité'/>";
                             echo "</svg>";  
 
-                            echo "<p>" . $_SESSION['visibilite'] . " m</p>";
+                            echo "<p class='info_donne'>" . $_SESSION['visibilite'] . " m</p>";
                         echo "</div>";    
                     echo "</div>";
                                                  
@@ -223,12 +223,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<div class='sunrise-set'>";
                         echo "<div class='sunrise'>";
                             echo "<img src='public/sunrise.svg' alt='icon du levé du soleil'>";
-                            echo "<p>heure du lever du soleil aujourd'hui : " . $_SESSION['sunrise'] . "<p>";
+                            echo "<p>" . $_SESSION['sunrise'] . "<p>";
                         echo "</div>";
                         
                         echo "<div class='sunset'>";
                             echo "<img src='public/sunset.svg' alt='icon du couché du soleil'>";
-                            echo "<p>heure du coucher du soleil aujourd'hui : " . $_SESSION['sunset'] . "<p>";
+                            echo "<p>" . $_SESSION['sunset'] . "<p>";
                         echo "</div>";
                     echo "</div>";
                     
