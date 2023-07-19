@@ -2,19 +2,20 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat {
+.resultat .infos, .resultat .temperature {
+  display: flex;
+  align-items: center;
+  width: auto;
+  max-width: 600px;
+  height: auto;
   margin: 4.5vw 0;
   padding: 20px;
   border: #eee solid 3px;
   border-radius: 15px;
-  background-color: rgba(238, 238, 238, 0.5019607843);
 }
+
 .resultat .temperature {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  display: flex;
-  align-items: center;
+  background-color: rgba(238, 238, 238, 0.5019607843);
 }
 @media (min-width: 640px) {
   .resultat .temperature {
@@ -64,6 +65,22 @@
     margin: 1rem 0;
     font-size: 2.5rem;
   }
+}
+.resultat .infos {
+  justify-content: space-around;
+  background: #eee;
+}
+.resultat .infos span {
+  display: block;
+  width: 1px;
+  height: 75px;
+  background: #b3b3b3;
+}
+.resultat .infos div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=resultat.css.map */

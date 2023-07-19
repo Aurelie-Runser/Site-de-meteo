@@ -159,9 +159,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 } elseif (isset($_SESSION['name'])) {
 
+                    // 1er zone : température avec grand icon
                     echo "<div class='temperature'>";
-                        echo "<img src='public/sun.svg' alt='icon d'un soleil'>";
-                            
+                        echo "<img src='public/sun.svg' alt='icon du vent'>";
+                    
                         echo "<div class='temp_txt'>";
                             echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
                             echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
@@ -170,36 +171,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "<p class='txt_nuage'>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
                         echo "</div>";  
                     echo "</div>";  
-
-                    echo "<br>";                        
                         
+                    // 2ème zone : pression + humidite + visibilité
                     echo "<div class='infos'>";
                         echo "<div class='info_pression'>";
-                            echo "<img src='public/pressure.svg' alt='icon de la pression atatmosphérique'>";
-                            echo "<p>pression atmosphérique : " . $_SESSION['pression'] . " hPa</p>";
-                        echo "</div>";
-                        
-                        echo "<div class='info_humidity'>";
-                            echo "<img src='public/humidity.svg' alt='icon de l'humidité'>";
-                            echo "<p>humidité : " . $_SESSION['humidite'] . "g/m3</p>";
+                            echo "<p>pression</p>";
+
+                            echo "<svg class='pression_icon'>";   
+                                echo "<use xlink:href='public/pressure.svg#pressure' alt='icon de la pression atatmosphérique'/>";
+                            echo "</svg>";
+
+                            echo "<p>" . $_SESSION['pression'] . " hPa</p>";
                         echo "</div>";
 
+                        echo "<span></span>";
+                        
+                        echo "<div class='info_humidity'>";
+                            echo "<p>humidité</p>";
+
+                            echo "<svg class='humidity_icon'>";   
+                                echo "<use xlink:href='public/humidity.svg#humidity' alt='icon de l'humidité'/>";
+                            echo "</svg>";  
+
+                            echo "<p>" . $_SESSION['humidite'] . " g/m3</p>";
+                        echo "</div>";
+
+                        echo "<span></span>";
+
                         echo "<div class='info_visibility'>";
-                            echo "<img src='public/visibility.svg' alt='icon de la visibilité'>";
-                            echo "<p>visibilité : " . $_SESSION['visibilite'] . "m</p>";
+                            echo "<p>visibilité</p>";
+                            
+                            echo "<svg class='visibility_icon'>";   
+                                echo "<use xlink:href='public/visibility.svg#visibility' alt='icon de la visibilité'/>";
+                            echo "</svg>";  
+
+                            echo "<p>" . $_SESSION['visibilite'] . " m</p>";
                         echo "</div>";    
                     echo "</div>";
-                                        
-                    echo "<br>";
-                    
+                                 
+                    // 3ème zone : vent
                     echo "<div class='wind'>";
                         echo "<img src='public/wind.svg' alt='icon du vent'>";
                         echo "<p class='wind_speed'>vitesse du vent : " . $_SESSION['vitesse_vent'] . " m/s</p>";
                         echo "<p class='wind_deg'>direction du vent : " . $_SESSION['direction_vent'] . " °</p>";
                     echo "</div>";                        
                     
-                    echo "<br>";
-
+                    // 4ème zone : heure de lever et coucher du soleil
                     echo "<div class='sunrise-set'>";
                         echo "<div class='sunrise'>";
                             echo "<img src='public/sunrise.svg' alt='icon du levé du soleil'>";
@@ -212,8 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "</div>";
                     echo "</div>";
                     
-                    echo "<br>";
-                    // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
+                    // si != 0, afficher la pluie
                     // if ($_SESSION['pluie_1h'] != 0){
                         echo "<div class='rain'>";
                             echo "<p class='rain_1h'>pluie tombées en 1 heure : " . $_SESSION['pluie_1h'] . " mm</p>";
@@ -221,6 +237,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     //     echo "</div>";
                     // };
                     
+                    // si != 0, afficher la neige
                     // if ($_SESSION['neige_1h'] != 0){
                         echo "<div class='snow'>";
                             echo "<p class='snow_1h'>neige tombées en 1 heure : " . $_SESSION['neige_1h'] . " mm</p>";
@@ -228,6 +245,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "</div>";
                     // };
 
+                    // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
                     session_unset();
                     session_destroy();
                 }

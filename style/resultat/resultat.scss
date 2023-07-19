@@ -3,21 +3,27 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat{
+
+%zone{
+    display: flex;
+    align-items: center;
+    width: auto;
+    max-width: 600px;
+    height: auto;
     margin: 4.5vw 0;
     padding: 20px;
     border: $border;
     border-radius: $border-radius;
-    background-color: $bg-txt;
+}
 
+.resultat{
+
+    // 1er zone : température avec grand icon
     .temperature{
-        width: 100%;
-        max-width: 550px;
-        height: auto;
-        display: flex;
-        align-items: center;
+        @extend %zone;
+        background-color: $bg-txt;
 
-        @media (min-width: #{$sm}){
+        @media (#{$ecran-sm}){
             gap: 20px;
         }
 
@@ -27,7 +33,7 @@
         
         .temp_txt{
 
-            @media (min-width: #{$sm}){
+            @media (#{$ecran-sm}){
                 font-size: 1.5rem;
             }
             
@@ -36,7 +42,7 @@
                 font-size: 2.5rem;
                 font-weight: bold;
 
-                @media (min-width: #{$sm}){
+                @media (#{$ecran-sm}){
                     font-size: 4rem;
                 }
             }
@@ -46,7 +52,7 @@
                 font-size: 0.80rem;
                 font-style: italic;
 
-                @media (min-width: #{$sm}){
+                @media (#{$ecran-sm}){
                     font-size: 1rem;
                 }
             }
@@ -62,7 +68,7 @@
                 font-size: 1.5rem;
                 font-weight: bold;
 
-                @media (min-width: #{$sm}){
+                @media (#{$ecran-sm}){
                     margin: 1rem 0;
                     font-size: 2.5rem;
                 }
@@ -70,4 +76,34 @@
         }
     }
     
+    // 2ème zone : pression + humidite + visibilité
+    .infos{
+        @extend %zone;
+        justify-content: space-around;
+        background: $bg-txt-plein;
+
+        // séprataion entre chaque valeur
+        span{
+            display: block;
+            width: 1px;
+            height: 75px;
+            background: lighten($txt-color, 50%);
+        }
+
+        // ce qui est commun au 3 valeurs (alignement + taille de l'icon)
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+
+
+            // .pression_icon{
+            // }
+
+        }
+
+        
+    }
 }
