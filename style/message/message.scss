@@ -7,6 +7,13 @@
     align-items: center;
     justify-content: center;
     gap: 2rem 0;
+    width: 100%;
+    padding: 20px;
+    border: $border;
+    border-width: 3px;
+    border-radius: $border-radius;
+    background: $bg-txt;
+
     
     /* changement d'alignement sur les grand écrans */
     @media screen and (min-width: 865px) {

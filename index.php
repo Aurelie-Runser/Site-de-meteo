@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['pays'] = $pays;
         $_SESSION['heure'] = $heureLocale;
     } else {
-        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Vérifiez son orthographe et pensez aux tirets.";
+        $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Pensez à bien écrire le nom complet de la ville, tiret compris, et vérifiez son orthographe.";
     }
 }
 ?>
