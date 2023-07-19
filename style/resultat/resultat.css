@@ -2,7 +2,7 @@
 /* zone du résultat 
     ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
 */
-.resultat .resultat_tableau .rain, .resultat .resultat_tableau .sunrise-set, .resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
+.resultat .resultat_tableau .rain-snow, .resultat .resultat_tableau .sunrise-set, .resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
   display: flex;
   align-items: center;
   width: auto;
@@ -182,7 +182,7 @@
   gap: 5px;
   font-weight: bold;
 }
-.resultat .resultat_tableau .rain {
+.resultat .resultat_tableau .rain-snow {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
@@ -192,16 +192,16 @@
   max-width: 250px;
   gap: 10px;
 }
-.resultat .resultat_tableau .rain div {
+.resultat .resultat_tableau .rain-snow div {
   display: flex;
   flex-direction: column;
   justify-content: left;
   gap: 5px;
 }
-.resultat .resultat_tableau .rain div .rain_txt {
+.resultat .resultat_tableau .rain-snow div .rain_txt {
   font-weight: bold;
 }
-.resultat .resultat_tableau .rain div span {
+.resultat .resultat_tableau .rain-snow div span {
   font-weight: normal;
   font-style: italic;
 }

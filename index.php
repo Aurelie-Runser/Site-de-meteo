@@ -231,11 +231,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "</div>";
                     echo "</div>";       
                     
-                                        // 5ème zone : la pluie
+                    // 5ème zone : la pluie
                     // si != 0, afficher la pluie
                     if ($_SESSION['pluie_1h'] != 0){
-                        echo "<div class='rain'>";
-                            echo "<img src='public/rain_only.svg' alt='icon de la pluie'>";
+                        echo "<div class='rain-snow'>";
+                            echo "<svg class='rain_icon'>";   
+                                echo "<use xlink:href='public/rain_only.svg#rain_only' alt='icon de la pluie'/>";
+                            echo "</svg>";
+
 
                             echo "<div>";
                                 echo "<p class='rain_txt'>pluie tombée</p>";
@@ -248,6 +251,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 echo "<p class='rain_3h'>
                                     <span>3h = </span>"
                                     . $_SESSION['pluie_3h'] . " mm
+                                </p>";
+                            echo "</div>";
+                        echo "</div>";
+                    };
+    
+                    // 6ème zone : la neige
+                    // si != 0, afficher la neige
+                    if ($_SESSION['neige_1h'] != 0){
+                        echo "<div class='rain-snow'>";
+                            echo "<svg class='snow_icon'>";   
+                                echo "<use xlink:href='public/snow.svg#snow' alt='icon de la neige'/>";
+                            echo "</svg>";
+
+
+                            echo "<div>";
+                                echo "<p class='rain_txt'>neige tombée</p>";
+
+                                echo "<p class='rain_1h'>
+                                    <span>1h = </span>"
+                                    . $_SESSION['neige_1h'] . " mm
+                                </p>";
+
+                                echo "<p class='rain_3h'>
+                                    <span>3h = </span>"
+                                    . $_SESSION['neige_3h'] . " mm
                                 </p>";
                             echo "</div>";
                         echo "</div>";
@@ -265,16 +293,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "<p>" . $_SESSION['sunset'] . "<p>";
                         echo "</div>";
                     echo "</div>";
-                    
-
-                    
-                    // si != 0, afficher la neige
-                    if ($_SESSION['neige_1h'] != 0){
-                        echo "<div class='snow'>";
-                            echo "<p class='snow_1h'>neige tombées en 1 heure : " . $_SESSION['neige_1h'] . " mm</p>";
-                            echo "<p class='snow_3h'>neige tombées en 3 heures : " . $_SESSION['neige_3h'] . " mm</p>";
-                        echo "</div>";
-                    };
 
                 echo "</div>";
 

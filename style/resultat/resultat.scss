@@ -212,7 +212,7 @@
         }
 
         // 5ème zone : la pluie
-        .rain{
+        .rain-snow{
             @extend %zone;
             flex-wrap: wrap;
             justify-content: space-around;

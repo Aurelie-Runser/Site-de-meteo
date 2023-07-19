@@ -17,21 +17,24 @@ body h1 span {
 }
 body .resultat .infos,
 body .resultat .wind,
-body .resultat .rain {
+body .resultat .rain-snow {
   background: #eee;
 }
 body .resultat .infos svg,
 body .resultat .wind svg,
-body .resultat .rain svg {
+body .resultat .rain-snow svg {
   width: 50px;
   height: 50px;
 }
 body .resultat .infos .pression_icon,
 body .resultat .infos .visibility_icon,
+body .resultat .infos .snow_icon,
 body .resultat .wind .pression_icon,
 body .resultat .wind .visibility_icon,
-body .resultat .rain .pression_icon,
-body .resultat .rain .visibility_icon {
+body .resultat .wind .snow_icon,
+body .resultat .rain-snow .pression_icon,
+body .resultat .rain-snow .visibility_icon,
+body .resultat .rain-snow .snow_icon {
   stroke: #333;
 }
 
@@ -69,15 +72,18 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 }
 .nighttime .resultat .infos,
 .nighttime .resultat .wind,
-.nighttime .resultat .rain {
+.nighttime .resultat .rain-snow {
   background: #333;
 }
 .nighttime .resultat .infos .pression_icon,
 .nighttime .resultat .infos .visibility_icon,
+.nighttime .resultat .infos .snow_icon,
 .nighttime .resultat .wind .pression_icon,
 .nighttime .resultat .wind .visibility_icon,
-.nighttime .resultat .rain .pression_icon,
-.nighttime .resultat .rain .visibility_icon {
+.nighttime .resultat .wind .snow_icon,
+.nighttime .resultat .rain-snow .pression_icon,
+.nighttime .resultat .rain-snow .visibility_icon,
+.nighttime .resultat .rain-snow .snow_icon {
   stroke: #eee;
 }
 

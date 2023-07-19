@@ -24,7 +24,7 @@ body{
         // changement de couleur des icons
         .infos,
         .wind,
-        .rain{
+        .rain-snow{
             background: $bg-txt-plein;
             
             svg{
@@ -33,7 +33,8 @@ body{
             }
 
             .pression_icon,
-            .visibility_icon{
+            .visibility_icon,
+            .snow_icon{
                 stroke: $txt-color;
             }
         }
@@ -94,11 +95,12 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
         // changement de couleur des icons
         .infos,
         .wind,
-        .rain{
+        .rain-snow{
             background: $bg-txt-plein-light;
 
             .pression_icon,
-            .visibility_icon{
+            .visibility_icon,
+            .snow_icon{
                 stroke: $txt-color-light;
             }
         }
