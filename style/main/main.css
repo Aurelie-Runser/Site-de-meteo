@@ -15,12 +15,19 @@ body h1 span {
   font-size: 3.5rem;
   text-decoration: underline;
 }
-body .resultat svg {
+body .resultat .infos,
+body .resultat .wind {
+  background: #eee;
+}
+body .resultat .infos svg,
+body .resultat .wind svg {
   width: 50px;
   height: 50px;
 }
-body .resultat .pression_icon,
-body .resultat .visibility_icon {
+body .resultat .infos .pression_icon,
+body .resultat .infos .visibility_icon,
+body .resultat .wind .pression_icon,
+body .resultat .wind .visibility_icon {
   stroke: #333;
 }
 
@@ -56,11 +63,14 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .nighttime .txt_heure {
   color: #000080;
 }
-.nighttime .resultat .infos {
+.nighttime .resultat .infos,
+.nighttime .resultat .wind {
   background: #333;
 }
 .nighttime .resultat .infos .pression_icon,
-.nighttime .resultat .infos .visibility_icon {
+.nighttime .resultat .infos .visibility_icon,
+.nighttime .resultat .wind .pression_icon,
+.nighttime .resultat .wind .visibility_icon {
   stroke: #eee;
 }
 
