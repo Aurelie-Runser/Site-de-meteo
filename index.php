@@ -5,7 +5,7 @@ $message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
-    $apiKey = "af0bed8924751e07bce0f22544b547e7";
+    $apiKey = "???";
 
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&lang=fr&appid=" . $apiKey;
 
@@ -181,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "</svg>";
                 }
 
-                // icons de pluit
+                // icons de pluie
                 elseif ($temps == "Rain"){
                     if ($description == "pluie verglaçante"){
                         // pluie gelée
