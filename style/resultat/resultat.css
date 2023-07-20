@@ -197,6 +197,7 @@
 }
 .resultat .resultat_tableau .rain-snow div .rain_txt {
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .resultat .resultat_tableau .rain-snow div span {
   font-weight: normal;
