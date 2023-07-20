@@ -314,9 +314,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                  
                     // 3ème zone : vent
                     echo "<div class='wind'>";
-                        echo "<svg class='wind_icon'>";   
-                            echo "<use xlink:href='public/wind.svg#wind' alt='icon de la pluie'/>";
-                        echo "</svg>";
+
+                        // s'il y a du vent, affiche l'icon avec le vent, sinon affiche l'icon avec le vent barré
+                        if ($_SESSION['vitesse_vent'] != 0){
+                            echo "<svg class='wind_icon'>";   
+                                echo "<use xlink:href='public/wind.svg#wind' alt='icon de la pluie'/>";
+                            echo "</svg>";
+                        } else {
+                            echo "<svg class='wind_no_icon'>";   
+                                echo "<use xlink:href='public/wind_no.svg#wind_no' alt='icon de la pluie'/>";
+                            echo "</svg>";
+                        }
 
                         echo "<div>";
                             echo "<p class='wind_speed'>
