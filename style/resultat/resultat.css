@@ -1,6 +1,7 @@
 @charset "UTF-8";
-/* zone du résultat 
-    ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
+/* zone du résultat, l'ensemble des données renvoyer par l'api de météo
+    ATTENTION : les couleurs des textes et des zone ".temperature" et ".sunrise-set" sont définit dans le fichié "main.scss"
+    car dépendent de l'heure
 */
 .resultat .resultat_tableau .rain-snow, .resultat .resultat_tableau .sunrise-set, .resultat .resultat_tableau .wind, .resultat .resultat_tableau .infos, .resultat .temperature {
   display: flex;
@@ -26,39 +27,18 @@
   border-width: 5px;
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
-@media (min-width: 640px) {
-  .resultat .temperature {
-    gap: 20px;
-  }
-}
 .resultat .temperature img {
   width: 50%;
-}
-@media (min-width: 640px) {
-  .resultat .temperature .temp_txt {
-    font-size: 1.5rem;
-  }
 }
 .resultat .temperature .temp_txt .txt_temperature {
   margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: bold;
 }
-@media (min-width: 640px) {
-  .resultat .temperature .temp_txt .txt_temperature {
-    font-size: 4rem;
-  }
-}
 .resultat .temperature .temp_txt .txt_ressentie,
 .resultat .temperature .temp_txt .txt_nuage {
   font-size: 0.8rem;
   font-style: italic;
-}
-@media (min-width: 640px) {
-  .resultat .temperature .temp_txt .txt_ressentie,
-  .resultat .temperature .temp_txt .txt_nuage {
-    font-size: 1rem;
-  }
 }
 .resultat .temperature .temp_txt .txt_description {
   font-weight: bold;
@@ -73,6 +53,19 @@
   font-weight: bold;
 }
 @media (min-width: 640px) {
+  .resultat .temperature {
+    gap: 20px;
+  }
+  .resultat .temperature .temp_txt {
+    font-size: 1.5rem;
+  }
+  .resultat .temperature .temp_txt .txt_temperature {
+    font-size: 4rem;
+  }
+  .resultat .temperature .temp_txt .txt_ressentie,
+  .resultat .temperature .temp_txt .txt_nuage {
+    font-size: 1rem;
+  }
   .resultat .temperature .temp_txt .txt_heure {
     margin: 1rem 0;
     font-size: 2.5rem;
@@ -119,22 +112,6 @@
   height: auto;
   gap: 20px;
 }
-@media (min-width: 600px) {
-  .resultat .resultat_tableau .wind {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media (min-width: 967px) {
-  .resultat .resultat_tableau .wind {
-    flex-direction: row;
-  }
-}
-@media (min-width: 1110px) {
-  .resultat .resultat_tableau .wind {
-    flex-direction: column;
-  }
-}
 .resultat .resultat_tableau .wind div .wind_speed {
   margin-bottom: 10px;
 }
@@ -142,6 +119,10 @@
   font-weight: bold;
 }
 @media (min-width: 600px) {
+  .resultat .resultat_tableau .wind {
+    display: flex;
+    flex-direction: column;
+  }
   .resultat .resultat_tableau .wind div {
     text-align: center;
   }
@@ -150,6 +131,9 @@
   }
 }
 @media (min-width: 967px) {
+  .resultat .resultat_tableau .wind {
+    flex-direction: row;
+  }
   .resultat .resultat_tableau .wind div {
     text-align: left;
   }
@@ -158,6 +142,9 @@
   }
 }
 @media (min-width: 1110px) {
+  .resultat .resultat_tableau .wind {
+    flex-direction: column;
+  }
   .resultat .resultat_tableau .wind div {
     text-align: center;
   }
@@ -189,17 +176,14 @@
   max-width: 250px;
   gap: 10px;
 }
-.resultat .resultat_tableau .rain-snow div {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  gap: 5px;
-}
 .resultat .resultat_tableau .rain-snow div .rain_txt {
   font-weight: bold;
   margin-bottom: 10px;
 }
-.resultat .resultat_tableau .rain-snow div span {
+.resultat .resultat_tableau .rain-snow div p {
+  margin-bottom: 5px;
+}
+.resultat .resultat_tableau .rain-snow div p span {
   font-weight: normal;
   font-style: italic;
 }

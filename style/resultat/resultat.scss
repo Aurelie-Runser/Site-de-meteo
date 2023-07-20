@@ -1,9 +1,11 @@
 @import "../variables.scss";
 
-/* zone du résultat 
-    ATTENTION : si la couleur n'est pas définit ici, c'est qu'elle hérite de celle définit dans "main.scss"
+/* zone du résultat, l'ensemble des données renvoyer par l'api de météo
+    ATTENTION : les couleurs des textes et des zone ".temperature" et ".sunrise-set" sont définit dans le fichié "main.scss"
+    car dépendent de l'heure
 */
 
+// style minimal de tous les encards, dit "zone"
 %zone{
     display: flex;
     align-items: center;
@@ -14,6 +16,7 @@
     border-radius: $border-radius;
 }
 
+// ".resultat" englobe l'ensemble des zones
 .resultat{
     display: flex;
     justify-content: center;
@@ -30,38 +33,24 @@
         border-width: 5px;
         background-color: $bg-txt;
 
-        @media (#{$ecran-sm}){
-            gap: $gap-big;
-        }
-
+        // largeur de l'icon
         img{
             width: 50%;
         }
         
+        // style et taille de chaque texe
         .temp_txt{
-
-            @media (#{$ecran-sm}){
-                font-size: 1.5rem;
-            }
             
             .txt_temperature{
                 margin-bottom: 1rem;
                 font-size: 2.5rem;
                 font-weight: bold;
-
-                @media (#{$ecran-sm}){
-                    font-size: 4rem;
-                }
             }
 
             .txt_ressentie,
             .txt_nuage{
                 font-size: 0.80rem;
                 font-style: italic;
-
-                @media (#{$ecran-sm}){
-                    font-size: 1rem;
-                }
             }
 
             .txt_description{
@@ -78,15 +67,36 @@
                 margin: 0.5rem 0;
                 font-size: 1.5rem;
                 font-weight: bold;
+            }
+        }
 
-                @media (#{$ecran-sm}){
+        // changement de taille des textes à paertir d'une certaines taille d'écran
+        @media (#{$ecran-sm}){
+            gap: $gap-big;
+
+            .temp_txt{
+                font-size: 1.5rem;
+
+                .txt_temperature{
+                    font-size: 4rem;
+                }
+
+                .txt_ressentie,
+                .txt_nuage{
+                    font-size: 1rem;
+                }
+
+                .txt_heure{
                     margin: 1rem 0;
                     font-size: 2.5rem;
                 }
+                    
             }
+                
         }
     }
     
+    // ensemble du reste des informations (pression/humidité,visibilité / vent / pluie / neige / lever,coucher du soleil
     .resultat_tableau{
         display: flex;
         flex-wrap: wrap;
@@ -97,12 +107,13 @@
         max-width: 630px;
         min-width: 250px;
 
+        // changement d'alignement des zones à partir d'une certaine taille d'écran
         @media (min-width : 967px) {
             justify-content: left;
         }
         
         // 2ème zone : pression + humidite + visibilité
-        // ATTENTION : la couleur du fond, et des icons est définit dans main.scss
+        // ATTENTION : la couleur du fond et des icons sont définies dans main.scss
         .infos{
             @extend %zone;
             justify-content: space-around;
@@ -118,7 +129,7 @@
                 background: lighten($txt-color, 50%);
             }
 
-            // ce qui est commun au 3 valeurs (alignement + taille de l'icon)
+            // ce qui est commun au 3 valeurs (alignement en colonne + taille de l'icon)
             div{
                 display: flex;
                 flex-direction: column;
@@ -138,55 +149,60 @@
             height: auto;
             gap: $gap-big;
 
-            // aligne le texte en fonction de la taille d'écran
-            @media (min-width : 600px){
-                display: flex;
-                flex-direction: column;
-            }
-
-            @media (min-width : 967px){
-                flex-direction: row;
-            }
-
-            @media (min-width : 1110px){
-                flex-direction: column;
-            }
-
             // affiche/cache le texte en fonction de la taille d'écran
             div{
 
+                // marge entre les 2 textes
                 .wind_speed{
                     margin-bottom: $gap-small;
                 }
 
+                // style du texte brute, sans la valeur
                 span{
                     font-weight: bold;
                 }
-                
-                @media (min-width : 600px){
+            }
+
+            // aligne et cache le texte en fonction de la taille d'écran
+
+            // + 600px = caché le texte et met en colone l'icon et les valeurs
+            @media (min-width : 600px){
+                display: flex;
+                flex-direction: column;
+
+                div{
                     text-align: center;
 
                     span{
                         display: none;
                     }
                 }
+            }
+            
+            // + 967px = affiche le texte et met en ligne l'icon et les valeurs
+            @media (min-width : 967px){
+                flex-direction: row;
 
-                @media (min-width : 967px){
-                    text-align: left;
+                div{
+                    text-align: left;        
 
                     span{
                         display: inline;
                     }
                 }
-                                
-                @media (min-width : 1110px){
-                    text-align: center;
+            }
 
+            // + 1110px = caché le texte et met en colone l'icon et les valeurs
+            @media (min-width : 1110px){
+                flex-direction: column;
+
+                div{
+                    text-align: center;
+                    
                     span{
                         display: none;
                     }
                 }
-
             }
         }
 
@@ -199,6 +215,7 @@
             border-width: 3px;
             background: $bg-txt;
 
+            // met en colone l'icon avec son heure
             div{
                 display: flex;
                 flex-direction: column;
@@ -219,26 +236,26 @@
             min-width: 80px;
             max-width: 250px;
             gap: $gap-small;
-
+                
+            // styles et marges des textes
             div{
-                display: flex;
-                flex-direction: column;
-                justify-content: left;
-                gap: 5px;
-
+                
+                // style du titre
                 .rain_txt{
                     font-weight: bold;
-                    margin-bottom: 10px;
+                    margin-bottom: $gap-small;
                 }
 
-                span{
-                    font-weight: normal;
-                    font-style: italic;
-    
+                p{
+                    margin-bottom: 5px;
+
+                    // style de l'heure "1h =" et "3h ="
+                    span{
+                        font-weight: normal;
+                        font-style: italic;
+                    }
                 }
             }
         }
-
     }
-
 }

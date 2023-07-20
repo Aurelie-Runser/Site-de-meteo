@@ -1,8 +1,7 @@
 @import "../variables.scss";
 
 
-
-/* alignement du formulaire (barre de recherche et bouton) */
+// alignement du formulaire (barre de recherche et bouton)
 form{
     position: relative;
     display: flex;
@@ -11,8 +10,8 @@ form{
     max-width: 350px;
     gap: 10px;
 
-    /* barre de recherche */
-    /* ATTENTION : la couleur du texte est définit dans "main.scss" puisque dépend de la couleur de fond */
+    // barre de recherche
+    // ATTENTION : la couleur du texte est définit dans "main.scss" puisque dépend de la couleur de fond
     input{    
         width: auto;
         height: auto;
@@ -25,7 +24,8 @@ form{
         font-style: italic;
     }
 
-    /* bouton */
+    // bouton
+    // Attention : il est normalement caché avec la propriété hidden ecrit dans le code html
     button{
         padding: 10px;
         
