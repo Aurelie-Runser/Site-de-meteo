@@ -261,7 +261,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<svg class='temp_mist icon-no-stroke'>";   
                         echo "<use xlink:href='public/mist.svg#mist'/>";
                     echo "</svg>";
-                
                 }
                 
                     echo "<div class='temp_txt'>";
@@ -389,12 +388,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<div class='sunrise-set'>";
 
                         echo "<div class='sunrise'>";
-                            echo "<img src='public/sunrise.svg' alt='icon du levé du soleil'>";
+                            echo "<svg class='icon_sunrise'>";   
+                                echo "<use xlink:href='public/sunrise.svg#sunrise'/>";
+                            echo "</svg>";
+
                             echo "<p>" . $sunrise . "<p>";
                         echo "</div>";
                         
                         echo "<div class='sunset'>";
-                            echo "<img src='public/sunset.svg' alt='icon du couché du soleil'>";
+                            echo "<svg class='icon_sunset'>";   
+                                echo "<use xlink:href='public/sunset.svg#sunset'/>";
+                            echo "</svg>";
+
                             echo "<p>" . $sunset . "<p>";
                         echo "</div>";
                     echo "</div>";

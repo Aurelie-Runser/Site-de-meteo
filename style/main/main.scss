@@ -36,17 +36,27 @@ body{
             }
         }
             
-        // changement de couleur des icons
+        // changement de couleur des fonds
         .infos,
         .wind,
-        .rain-snow{
+        .rain-snow,
+        .sunrise-set{
             background: $bg-txt-plein;
             
+            // taille des petits icons
             svg{
                 width: 50px;
                 height: 50px;
             }
 
+            // taille des icons pour le lever et coucher du soleil
+            .icon_sunrise,
+            .icon_sunset{
+                width: 70px;
+                height: 70px;
+            }
+
+            // changement de couleur des icons
             .pression_icon,
             .visibility_icon,
             .snow_icon{

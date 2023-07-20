@@ -26,14 +26,27 @@ body .resultat .temperature .icon-no-stroke {
 }
 body .resultat .infos,
 body .resultat .wind,
-body .resultat .rain-snow {
+body .resultat .rain-snow,
+body .resultat .sunrise-set {
   background: #eee;
 }
 body .resultat .infos svg,
 body .resultat .wind svg,
-body .resultat .rain-snow svg {
+body .resultat .rain-snow svg,
+body .resultat .sunrise-set svg {
   width: 50px;
   height: 50px;
+}
+body .resultat .infos .icon_sunrise,
+body .resultat .infos .icon_sunset,
+body .resultat .wind .icon_sunrise,
+body .resultat .wind .icon_sunset,
+body .resultat .rain-snow .icon_sunrise,
+body .resultat .rain-snow .icon_sunset,
+body .resultat .sunrise-set .icon_sunrise,
+body .resultat .sunrise-set .icon_sunset {
+  width: 70px;
+  height: 70px;
 }
 body .resultat .infos .pression_icon,
 body .resultat .infos .visibility_icon,
@@ -43,7 +56,10 @@ body .resultat .wind .visibility_icon,
 body .resultat .wind .snow_icon,
 body .resultat .rain-snow .pression_icon,
 body .resultat .rain-snow .visibility_icon,
-body .resultat .rain-snow .snow_icon {
+body .resultat .rain-snow .snow_icon,
+body .resultat .sunrise-set .pression_icon,
+body .resultat .sunrise-set .visibility_icon,
+body .resultat .sunrise-set .snow_icon {
   stroke: #333;
 }
 
