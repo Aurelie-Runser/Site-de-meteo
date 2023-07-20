@@ -15,6 +15,15 @@ body h1 span {
   font-size: 3.5rem;
   text-decoration: underline;
 }
+body .resultat .temperature svg {
+  flex: none;
+  width: 50%;
+  height: auto;
+  stroke: #333;
+}
+body .resultat .temperature .icon-no-stroke {
+  stroke: none;
+}
 body .resultat .infos,
 body .resultat .wind,
 body .resultat .rain-snow {
@@ -70,20 +79,20 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .nighttime .txt_heure {
   color: #000080;
 }
+.nighttime .resultat .temperature svg {
+  stroke: #eee;
+}
+.nighttime .resultat .temperature .icon-no-stroke {
+  stroke: none;
+}
 .nighttime .resultat .infos,
 .nighttime .resultat .wind,
 .nighttime .resultat .rain-snow {
   background: #333;
 }
-.nighttime .resultat .infos .pression_icon,
-.nighttime .resultat .infos .visibility_icon,
-.nighttime .resultat .infos .snow_icon,
-.nighttime .resultat .wind .pression_icon,
-.nighttime .resultat .wind .visibility_icon,
-.nighttime .resultat .wind .snow_icon,
-.nighttime .resultat .rain-snow .pression_icon,
-.nighttime .resultat .rain-snow .visibility_icon,
-.nighttime .resultat .rain-snow .snow_icon {
+.nighttime .resultat .infos svg,
+.nighttime .resultat .wind svg,
+.nighttime .resultat .rain-snow svg {
   stroke: #eee;
 }
 

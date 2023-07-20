@@ -159,14 +159,117 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // 1er zone : température avec grand icon
                 echo "<div class='temperature'>";
-                    echo "<img src='public/sun.svg' alt='icon du vent'>";
+
+                $temps = $_SESSION['temps'];
+                $heure = $_SESSION['heure'];
+                $sunrise = $_SESSION['sunrise'];
+                $sunset = $_SESSION['sunset'];
+
+                // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
+                // icon d'orage
+                if ($temps == "Thunderstorm"){
+                    echo "<svg class='temp_storm'>";   
+                        echo "<use xlink:href='public/storm.svg#storm'/>";
+                    echo "</svg>";
+
+                } 
+
+                // icon de douce pluie
+                elseif ($temps == "Drizzle"){
+                    echo "<svg class='temp_rain icon-no-stroke'>";   
+                        echo "<use xlink:href='public/rain.svg#rain'/>";
+                    echo "</svg>";
+                }
+
+                // icons de pluit
+                elseif ($temps == "Rain"){
+                    if ($description == "pluie verglaçante"){
+                        // pluie gelée
+                        // Attention : couleur définit dans "main.scss"
+                        echo "<svg class='temp_snow'>";   
+                            echo "<use xlink:href='public/snow.svg#snow'/>";
+                        echo "</svg>";
+                    }
+                    
+                    else{
+                        // pluie simple
+                        echo "<svg class='temp_rain_only icon-no-stroke'>";   
+                            echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
+                        echo "</svg>";
+                    }
+                }
+
+                // icon de la neige
+                elseif ($temps == "Snow"){
+                    echo "<svg class='temp_snow'>";   
+                        echo "<use xlink:href='public/snow.svg#snow'/>";
+                    echo "</svg>";
+                }
+
+                // icon du soleil ou de la lune
+                elseif ($temps == "Clear"){
+                    if (($sunrise <= $heure) or ($heure > $sunset)){
+                        // icon de soleil
+                        echo "<svg class='temp_sun'>";   
+                            echo "<use xlink:href='public/sun.svg#sun'/>";
+                        echo "</svg>";
+                    }
+                    
+                    else{
+                        // icon de la lune
+                        echo "<svg class='temp_moon'>";   
+                            echo "<use xlink:href='public/moon.svg#moon'/>";
+                        echo "</svg>";
+                    }
+                }
+
+                // icons de nuages
+                elseif ($temps == "Clouds"){
+                    if ($description == "peu de nuage"){
+                        if (($sunrise <= $heure) or ($heure > $sunset)){
+                            // icon peu de nuage le jour
+                            echo "<svg class='temp_few_cloud icon-no-stroke'>";   
+                                echo "<use xlink:href='public/few_cloud.svg#few_cloud'/>";
+                            echo "</svg>";
+                        }
+                        
+                        else {
+                            // icon peu de nuage la nuit
+                            echo "<svg class='temp_moon_few_cloud icon-no-stroke'>";   
+                                echo "<use xlink:href='public/moon_few_cloud.svg#moon_few_cloud'/>";
+                            echo "</svg>";
+                        }
+                    }
+                    
+                    elseif ($description == "partiellement nuageux"){
+                        // icon nuage
+                        echo "<svg class='temp_cloud icon-no-stroke'>";   
+                            echo "<use xlink:href='public/cloud.svg#cloud'/>";
+                        echo "</svg>";
+                    }
+                    
+                    else {
+                        // icon nuage
+                        echo "<svg class='temp_cloud_lot icon-no-stroke'>";   
+                            echo "<use xlink:href='public/cloud_lot.svg#cloud_lot'/>";
+                        echo "</svg>";
+                    }
+                }
+
+                // icon du bruillard
+                else{
+                    echo "<svg class='temp_mist icon-no-stroke'>";   
+                        echo "<use xlink:href='public/mist.svg#mist'/>";
+                    echo "</svg>";
+                
+                }
                 
                     echo "<div class='temp_txt'>";
                         echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
                         echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
                         echo "<p class='txt_minmax'>" . $_SESSION['temperature_min'] . "°C / " . $_SESSION['temperature_max'] . "°C</p>";
                         echo "<p class='txt_heure'>" . $_SESSION['heure'] . "<p>";
-                        echo "<p class='txt_description'>" . $_SESSION['description'] . "</p>";
+                        echo "<p class='txt_description'>" . $description . "</p>";
                         echo "<p class='txt_nuage'>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
                     echo "</div>";  
                 echo "</div>";  
@@ -287,12 +390,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         echo "<div class='sunrise'>";
                             echo "<img src='public/sunrise.svg' alt='icon du levé du soleil'>";
-                            echo "<p>" . $_SESSION['sunrise'] . "<p>";
+                            echo "<p>" . $sunrise . "<p>";
                         echo "</div>";
                         
                         echo "<div class='sunset'>";
                             echo "<img src='public/sunset.svg' alt='icon du couché du soleil'>";
-                            echo "<p>" . $_SESSION['sunset'] . "<p>";
+                            echo "<p>" . $sunset . "<p>";
                         echo "</div>";
                     echo "</div>";
 

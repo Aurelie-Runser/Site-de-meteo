@@ -20,6 +20,21 @@ body{
 
     // taille et couleur des svg
     .resultat{
+
+        .temperature{
+            // taille pour les grandes icons
+            svg{
+                flex: none;
+                width: 50%;
+                height: auto;
+                stroke: $txt-color;
+            }
+
+            // suppression de la couleur des bordures pour les icons qui n'en ont pas
+            .icon-no-stroke{
+                stroke: none;
+            }
+        }
             
         // changement de couleur des icons
         .infos,
@@ -64,8 +79,6 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
     .txt_heure{
         color: darken($bg-d, 50%);
     }
-
-
 }
             
             
@@ -92,18 +105,30 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 
     .resultat{
 
-        // changement de couleur des icons
+        // changement de couleur de la grande icons
+        .temperature{
+
+            svg{
+                stroke: $txt-color-light;
+            }
+
+            // suppression de la couleur des bordures pour les icons qui n'en ont pas
+            .icon-no-stroke{
+                stroke: none;
+            }
+        }
+
+        // changement de couleur des petits icons
         .infos,
         .wind,
         .rain-snow{
             background: $bg-txt-plein-light;
 
-            .pression_icon,
-            .visibility_icon,
-            .snow_icon{
+            svg{
                 stroke: $txt-color-light;
             }
         }
+        
 
     }
     
