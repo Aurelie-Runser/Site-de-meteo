@@ -5,3 +5,16 @@
 .cloud_few-sun{
     fill:#ffbf00;
 }
+
+#cloud_few{
+    transform: translate(10%, 10%);
+}
+
+#cloud_few-nuage{
+    animation: anim-cloud_few-nuage 2s infinite alternate ease-in-out;
+}
+
+@keyframes anim-cloud_few-nuage {
+    from { transform: translateX(10px);}
+    to { transform: translateX(0px);}
+}
