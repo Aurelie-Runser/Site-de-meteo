@@ -1,0 +1,11 @@
+.color_sun{
+    stroke:#ffbf00;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:48px;
+}
+
+.color_sun,
+.color_fill_no{
+    fill:none;
+}
