@@ -1,15 +1,15 @@
 // taille d'écran (utilisé pour les @media)
-$sm : 640px;
-$md : 768px;
-$lg : 1024px;
-$xl : 1280px;
-$xl2 : 1536px;
+$sm : 477px;
+$md : 640px;
+$lg : 967px;
+$xl : 982px;
+$xl2 : 1111px;
 
-$ecran-sm : "min-width: #{$sm}";
-$ecran-md : "min-width: #{$md}";
-$ecran-lg : "min-width: #{$lg}";
-$ecran-xl : "min-width: #{$xl}";
-$ecran-xl2 : "min-width: #{$xl2}";
+$ecran-sm : "(min-width: #{$sm})";
+$ecran-md : "(min-width: #{$md})";
+$ecran-lg : "(min-width: #{$lg})";
+$ecran-xl : "(min-width: #{$xl})";
+$ecran-xl2 : "(min-width: #{$xl2})";
 
 // gap
 $gap-small : 10px;

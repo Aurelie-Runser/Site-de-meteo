@@ -74,7 +74,7 @@
         }
 
         // changement de taille des textes à paertir d'une certaines taille d'écran
-        @media (#{$ecran-md}){
+        @media #{$ecran-md}{
             gap: $gap-big;
 
             svg{
@@ -115,7 +115,7 @@
         min-width: 250px;
 
         // changement d'alignement des zones à partir d'une certaine taille d'écran
-        @media (min-width : 967px) {
+        @media #{$ecran-lg}{
             justify-content: left;
         }
         
@@ -173,7 +173,7 @@
             // aligne et cache le texte en fonction de la taille d'écran
 
             // + 600px = caché le texte et met en colone l'icon et les valeurs
-            @media (min-width : 600px){
+            @media #{$ecran-sm}{
                 display: flex;
                 flex-direction: column;
 
@@ -187,7 +187,7 @@
             }
             
             // + 967px = affiche le texte et met en ligne l'icon et les valeurs
-            @media (min-width : 967px){
+            @media #{$ecran-lg}{
                 flex-direction: row;
 
                 div{
@@ -200,7 +200,7 @@
             }
 
             // + 1110px = caché le texte et met en colone l'icon et les valeurs
-            @media (min-width : 1110px){
+            @media #{$ecran-xl2}{
                 flex-direction: column;
 
                 div{

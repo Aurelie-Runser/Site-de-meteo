@@ -16,7 +16,7 @@
 
     
     /* changement d'alignement sur les grand écrans */
-    @media screen and (min-width: 865px) {
+    @media #{$ecran-xl}{
         flex-direction: row-reverse;
         justify-content: space-between;
     }
@@ -26,7 +26,7 @@
         text-align: center;
         font-weight: bold;
         /* alignement du texte sur les grand écrans */
-        @media screen and (min-width: 865px) {
+        @media #{$ecran-xl}{
             text-align: left;
         }
     }

@@ -16,7 +16,7 @@
   /* style du texte */
   /* style de l'icon point d'intérogation */
 }
-@media screen and (min-width: 865px) {
+@media (min-width: 982px) {
   .resultat_msg {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -27,7 +27,7 @@
   font-weight: bold;
   /* alignement du texte sur les grand écrans */
 }
-@media screen and (min-width: 865px) {
+@media (min-width: 982px) {
   .resultat_msg .msg_txt {
     text-align: left;
   }

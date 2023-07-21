@@ -124,7 +124,7 @@
 .resultat .resultat_tableau .wind div span {
   font-weight: bold;
 }
-@media (min-width: 600px) {
+@media (min-width: 477px) {
   .resultat .resultat_tableau .wind {
     display: flex;
     flex-direction: column;
@@ -147,7 +147,7 @@
     display: inline;
   }
 }
-@media (min-width: 1110px) {
+@media (min-width: 1111px) {
   .resultat .resultat_tableau .wind {
     flex-direction: column;
   }
