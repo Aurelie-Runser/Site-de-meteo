@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="mist" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768">
+  <path id="mist_trait-1" class="mist-trait" d="m160,160h96m128,0h288"/>
+  <path id="mist_trait-2" class="mist-trait" d="m96,320h352m128,0h32"/>
+  <path id="mist_trait-3" class="mist-trait" d="m160,480h160m128,0h224"/>
+  <path id="mist_trait-4" class="mist-trait" d="m96,640h288m128,0h96"/>
+</svg>

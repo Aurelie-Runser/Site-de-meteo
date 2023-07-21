@@ -258,14 +258,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // // icon du bruillard
                 // else{
-                //     echo "<svg class='temp_mist icon-no-stroke'>";   
-                //         echo "<use xlink:href='public/mist.svg#mist'/>";
-                //     echo "</svg>";
+                    echo "<svg class='temp_mist icon-no-stroke'>";   
+                        echo "<use xlink:href='public/mist/mist.svg#mist'/>";
+                    echo "</svg>";
                 // }
-
-                        echo "<svg class='temp_cloud_few_moon icon-no-stroke'>";   
-                            echo "<use xlink:href='public/cloud_few_moon/cloud_few_moon.svg#cloud_few_moon'/>";
-                        echo "</svg>";
                 
                     echo "<div class='temp_txt'>";
                         echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
