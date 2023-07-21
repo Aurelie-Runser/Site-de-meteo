@@ -1,0 +1,20 @@
+.cloud_few_moon-nuage{
+    fill:#aaaaa6;
+}
+
+.cloud_few_moon-moon{
+    fill:#eee;
+}
+
+#cloud_few_moon{
+    transform: translate(10%, 10%);
+}
+
+#cloud_few_moon-nuage{
+    animation: anim-cloud_few_moon-nuage 2s infinite alternate ease-in-out;
+}
+
+@keyframes anim-cloud_few_moon-nuage {
+    from { transform: translateX(10px);}
+    to { transform: translateX(0px);}
+}

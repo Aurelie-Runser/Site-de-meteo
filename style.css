@@ -16,6 +16,7 @@
 /* import de toutes les feuilles de styles des icons */
 @import url("public/cloud/color.css");
 @import url("public/cloud_few/color.css");
+@import url("public/cloud_few_moon/color.css");
 @import url("public/cloud_lot/color.css");
 @import url("public/sun/color.css");
 
