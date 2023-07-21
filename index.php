@@ -228,10 +228,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 //     if ($description == "peu de nuage"){
                 //         if (($sunrise <= $heure) or ($heure > $sunset)){
                 //             // icon peu de nuage le jour
-                //             echo "<svg class='temp_few_cloud icon-no-stroke'>";   
-                //                 echo "<use xlink:href='public/few_cloud.svg#few_cloud'/>";
-                //             echo "</svg>";
-                //         }
+            //     echo "<svg class='temp_cloud_few'>";   
+            //     echo "<use xlink:href='public/cloud_few/cloud_few.svg#cloud_few'/>";
+            // echo "</svg>";
+//         }
                         
                 //         else {
                 //             // icon peu de nuage la nuit
@@ -263,9 +263,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 //     echo "</svg>";
                 // }
 
-                        echo "<svg class='temp_cloud icon-no-stroke'>";   
-                            echo "<use xlink:href='public/cloud/cloud.svg#cloud'/>";
-                        echo "</svg>";
+                            echo "<svg class='temp_cloud_few'>";   
+                                echo "<use xlink:href='public/cloud_few/cloud_few.svg#cloud_few'/>";
+                            echo "</svg>";
                 
                     echo "<div class='temp_txt'>";
                         echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";

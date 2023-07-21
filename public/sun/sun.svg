@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768">
-    <path class="color_fill_no" d="m0,0h768v768H0V0Z"/>
-    <path id="cercle" class="color_sun" d="m256,384c0,70.69,57.31,128,128,128s128-57.31,128-128-57.31-128-128-128-128,57.31-128,128"/>
-    <line id="trait_h" class="color_sun" x1="384" y1="96" x2="384" y2="128"/>
-    <line id="trait_h-d" class="color_sun" x1="588.8" y1="179.2" x2="566.4" y2="201.6"/>
-    <path id="trait_d" class="color_sun" d="m640,384h32"/>
-    <line id="trait_b-d" class="color_sun" x1="566.4" y1="566.4" x2="588.8" y2="588.8"/>
-    <line id="trait_b" class="color_sun" x1="384" y1="640" x2="384" y2="672"/>
-    <line id="trait_b-g" class="color_sun" x1="201.6" y1="566.4" x2="179.2" y2="588.8"/>
-    <line id="trait_g" class="color_sun" x1="96" y1="384" x2="128" y2="384"/>
-    <line id="trait_h-g" class="color_sun" x1="179.2" y1="179.2" x2="201.6" y2="201.6"/>
+    <path class="sun-color_fill_no" d="m0,0h768v768H0V0Z"/>
+    <path id="sun-cercle" class="color_sun" d="m256,384c0,70.69,57.31,128,128,128s128-57.31,128-128-57.31-128-128-128-128,57.31-128,128"/>
+    <line id="sun-trait_h" class="color_sun" x1="384" y1="96" x2="384" y2="128"/>
+    <line id="sun-trait_h-d" class="color_sun" x1="588.8" y1="179.2" x2="566.4" y2="201.6"/>
+    <path id="sun-trait_d" class="color_sun" d="m640,384h32"/>
+    <line id="sun-trait_b-d" class="color_sun" x1="566.4" y1="566.4" x2="588.8" y2="588.8"/>
+    <line id="sun-trait_b" class="color_sun" x1="384" y1="640" x2="384" y2="672"/>
+    <line id="sun-trait_b-g" class="color_sun" x1="201.6" y1="566.4" x2="179.2" y2="588.8"/>
+    <line id="sun-trait_g" class="color_sun" x1="96" y1="384" x2="128" y2="384"/>
+    <line id="sun-trait_h-g" class="color_sun" x1="179.2" y1="179.2" x2="201.6" y2="201.6"/>
 </svg>
