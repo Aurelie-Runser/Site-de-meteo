@@ -18,7 +18,7 @@
 #sun-trait_d,
 #sun-trait_b,
 #sun-trait_g{
-    animation: anim-sun_trait-ligne 2s infinite ;
+    animation: anim-sun_trait-ligne 2s infinite ease-in-out ;
 }
 
 @keyframes anim-sun_trait-ligne {
@@ -32,7 +32,7 @@
 #sun-trait_b-d,
 #sun-trait_b-g,
 #sun-trait_h-g{
-    animation: anim-sun_trait-diagonale 2s infinite ;
+    animation: anim-sun_trait-diagonale 2s infinite ease-in-out;
 }
 
 @keyframes anim-sun_trait-diagonale {

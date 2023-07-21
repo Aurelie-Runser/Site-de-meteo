@@ -1,3 +1,7 @@
+#cloud_lot{
+    transform: translate(10%, 10%);
+}
+
 .cloud_lot-nuage_ar{
     fill:#333;
     animation: anim-cloud_lot-nuage_ar 2s infinite ease-in-out;

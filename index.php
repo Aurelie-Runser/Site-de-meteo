@@ -263,8 +263,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 //     echo "</svg>";
                 // }
 
-                        echo "<svg class='temp_cloud_lot icon-no-stroke'>";   
-                            echo "<use xlink:href='public/cloud_lot/cloud_lot.svg#cloud_lot'/>";
+                        echo "<svg class='temp_sun icon-no-stroke'>";   
+                            echo "<use xlink:href='public/sun/sun.svg#sun'/>";
                         echo "</svg>";
                 
                     echo "<div class='temp_txt'>";
