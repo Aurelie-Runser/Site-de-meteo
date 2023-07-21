@@ -18,10 +18,10 @@
 #sun-trait_d,
 #sun-trait_b,
 #sun-trait_g{
-    animation: sun_trait-ligne 2s infinite ;
+    animation: anim-sun_trait-ligne 2s infinite ;
 }
 
-@keyframes sun_trait-ligne {
+@keyframes anim-sun_trait-ligne {
     0% { scale: 0.9}
     50% { scale: 1.1}
     100% { scale: 0.9}
@@ -32,10 +32,10 @@
 #sun-trait_b-d,
 #sun-trait_b-g,
 #sun-trait_h-g{
-    animation: sun_trait-diagonale 2s infinite ;
+    animation: anim-sun_trait-diagonale 2s infinite ;
 }
 
-@keyframes sun_trait-diagonale {
+@keyframes anim-sun_trait-diagonale {
     0% { scale: 1.1}
     50% { scale: 0.9}
     100% { scale: 1.1}
