@@ -1,0 +1,15 @@
+.humidity-trait{
+    fill:none;
+    stroke:#1eb0d5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:48px;
+}
+
+.humidity-plein{
+    fill:#1eb0d500;
+    transition: all 1s;
+}
+.humidity-plein:hover{
+    fill:#1eb0d5;
+}

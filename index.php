@@ -235,9 +235,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         
                 //         else {
                 //             // icon peu de nuage la nuit
-                //             echo "<svg class='temp_moon_few_cloud icon-no-stroke'>";   
-                //                 echo "<use xlink:href='public/moon_few_cloud.svg#moon_few_cloud'/>";
-                //             echo "</svg>";
+                        // echo "<svg class='temp_cloud_few_moon icon-no-stroke'>";   
+                        //     echo "<use xlink:href='public/cloud_few_moon/cloud_few_moon.svg#cloud_few_moon'/>";
+                        // echo "</svg>";
                 //         }
                 //     }
                     
@@ -297,7 +297,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "<p class='info_titre'>humidité</p>";
 
                             echo "<svg class='humidity_icon'>";   
-                                echo "<use xlink:href='public/humidity.svg#humidity' alt='icon de l'humidité'/>";
+                                echo "<use xlink:href='public/humidity/humidity.svg#humidity' alt='icon de l'humidité'/>";
                             echo "</svg>";  
 
                             echo "<p class='info_donne'>" . $_SESSION['humidite'] . " g/m3</p>";
