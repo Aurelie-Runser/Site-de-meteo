@@ -1,11 +1,42 @@
+/* classes des traits et rond du soleil */
 .sun-color_sun{
     stroke:#ffbf00;
     stroke-linecap:round;
     stroke-linejoin:round;
     stroke-width:48px;
+    transform-origin: center;
 }
 
+/* supression de la couleur du fond */
 .sun-color_sun,
 .sun-color_fill_no{
     fill:none;
+}
+
+/* animation des traits horizontaux et verticaux */
+#sun-trait_h,
+#sun-trait_d,
+#sun-trait_b,
+#sun-trait_g{
+    animation: sun_trait-ligne 2s infinite ;
+}
+
+@keyframes sun_trait-ligne {
+    0% { scale: 0.9}
+    50% { scale: 1.1}
+    100% { scale: 0.9}
+}
+
+/* animations des traits diaguonaux */
+#sun-trait_h-d,
+#sun-trait_b-d,
+#sun-trait_b-g,
+#sun-trait_h-g{
+    animation: sun_trait-diagonale 2s infinite ;
+}
+
+@keyframes sun_trait-diagonale {
+    0% { scale: 1.1}
+    50% { scale: 0.9}
+    100% { scale: 1.1}
 }
