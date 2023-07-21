@@ -5,7 +5,7 @@ $message = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
-    $apiKey = "???";
+    $apiKey = "af0bed8924751e07bce0f22544b547e7";
 
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&lang=fr&appid=" . $apiKey;
 

@@ -27,8 +27,11 @@
   border-width: 5px;
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
-.resultat .temperature img {
+.resultat .temperature svg {
+  flex: none;
   width: 50%;
+  height: 100%;
+  margin: 0 10px 0 -10px;
 }
 .resultat .temperature .temp_txt .txt_temperature {
   margin-bottom: 1rem;
@@ -55,6 +58,9 @@
 @media (min-width: 640px) {
   .resultat .temperature {
     gap: 20px;
+  }
+  .resultat .temperature svg {
+    margin: 0;
   }
   .resultat .temperature .temp_txt {
     font-size: 1.5rem;

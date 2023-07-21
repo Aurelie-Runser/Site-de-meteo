@@ -16,9 +16,6 @@ body h1 span {
   text-decoration: underline;
 }
 body .resultat .temperature svg {
-  flex: none;
-  width: 50%;
-  height: auto;
   stroke: #333;
 }
 body .resultat .temperature .icon-no-stroke {

@@ -22,11 +22,8 @@ body{
     .resultat{
 
         .temperature{
-            // taille pour les grandes icons
+            // couleurs pour certaines grandes icons
             svg{
-                flex: none;
-                width: 50%;
-                height: auto;
                 stroke: $txt-color;
             }
 
