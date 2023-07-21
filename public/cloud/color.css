@@ -3,11 +3,10 @@
 }
 
 #cloud{
-    animation: anim-cloud 4s infinite ease-in-out;
+    animation: anim-cloud 2s infinite alternate ease-in-out;
 }
 
 @keyframes anim-cloud {
-    0% { transform: translate(25px, 10%);}
-    50% { transform: translate(15px, 10%);}
-    100% { transform: translate(25px, 10%);}
+    from { transform: translate(25px, 10%);}
+    to { transform: translate(15px, 10%);}
 }
