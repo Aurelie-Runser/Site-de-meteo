@@ -4,22 +4,15 @@
 
 .cloud_lot-nuage_ar{
     fill:#333;
-    animation: anim-cloud_lot-nuage_ar 2s infinite ease-in-out;
+    animation: anim-cloud_lot 2s infinite alternate ease-in-out;
 }
 
 .cloud_lot-nuage_av{
     fill:#aaaaa6;
-    animation: anim-cloud_lot-nuage_av 2s infinite ease-in-out;
+    animation: anim-cloud_lot 2s infinite alternate-reverse ease-in-out;
 }
 
-@keyframes anim-cloud_lot-nuage_ar {
-    0% { transform: translateX(0);}
-    50% { transform: translateX(-10px);}
-    100% { transform: translateX(0);}
-}
-
-@keyframes anim-cloud_lot-nuage_av {
-    0% { transform: translateX(0);}
-    50% { transform: translateX(10px);}
-    100% { transform: translateX(0);}
+@keyframes anim-cloud_lot {
+    from { transform: translateX(5px);}
+    to { transform: translateX(-5px);}
 }
