@@ -1,0 +1,19 @@
+.moon-rect{
+    fill: none;
+}
+
+.moon-lune{
+    fill:none;
+    stroke:#eee;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:48px;
+    transform-origin: center;
+    animation: anim-moon 2s infinite alternate ease-in-out;
+}
+
+@keyframes anim-moon {
+    from { transform: rotate(-5deg);}
+    to { transform: rotate(5deg);}
+}
+
