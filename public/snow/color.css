@@ -1,0 +1,14 @@
+/* class définit dans index.php, grande icon */
+.temp_icon .temp_snow{
+    animation: anim-snow 10s infinite linear;
+}
+
+/* class définit dans index.php, petite icon */
+.snow_icon:hover{
+    animation: anim-snow 10s infinite linear;
+}
+
+@keyframes anim-snow {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(180deg);}
+}

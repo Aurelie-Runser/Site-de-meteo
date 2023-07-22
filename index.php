@@ -195,17 +195,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                 //     else{
                 //         // pluie simple
-                //         echo "<svg class='temp_rain_only icon-no-stroke'>";   
-                //             echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
-                //         echo "</svg>";
+                        // echo "<svg class='temp_rain_only icon-no-stroke'>";   
+                        //     echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
+                        // echo "</svg>";
                 //     }
                 // }
 
                 // icon de la neige
                 // elseif ($temps == "Snow"){
-                //     echo "<svg class='temp_snow'>";   
-                //         echo "<use xlink:href='public/snow.svg#snow'/>";
-                //     echo "</svg>";
+                    echo "<svg class='temp_snow'>";   
+                        echo "<use xlink:href='public/snow/snow.svg#snow'/>";
+                    echo "</svg>";
                 // }
 
                 // icon du soleil ou de la lune
@@ -373,10 +373,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
                     // 6ème zone : la neige
                     // si != 0, afficher la neige
-                    if ($_SESSION['neige_1h'] != 0){
+                    if ($_SESSION['neige_1h'] == 0){
                         echo "<div class='rain-snow'>";
                             echo "<svg class='snow_icon'>";   
-                                echo "<use xlink:href='public/snow.svg#snow' alt='icon de la neige'/>";
+                                echo "<use xlink:href='public/snow/snow.svg#snow' alt='icon de la neige'/>";
                             echo "</svg>";
 
 

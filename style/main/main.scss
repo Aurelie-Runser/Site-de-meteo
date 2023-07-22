@@ -23,9 +23,9 @@ body{
 
         .temperature{
             // couleurs pour certaines grandes icons
-            // svg{
-            //     stroke: $txt-color;
-            // }
+            svg{
+                stroke: $txt-color;
+            }
 
             // suppression de la couleur des bordures pour les icons qui n'en ont pas
             .icon-no-stroke{
