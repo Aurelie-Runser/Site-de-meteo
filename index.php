@@ -169,17 +169,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
                     // icon d'orage
                     // if ($temps == "Thunderstorm"){
-                    //     echo "<svg class='temp_storm'>";   
-                    //         echo "<use xlink:href='public/storm.svg#storm'/>";
-                    //     echo "</svg>";
+                        echo "<svg class='temp_storm'>";   
+                            echo "<use xlink:href='public/storm/storm.svg#storm'/>";
+                        echo "</svg>";
 
                     // } 
 
                     // icon de douce pluie
                     // elseif ($temps == "Drizzle"){
-                        echo "<svg class='temp_rain icon-no-stroke'>";   
-                            echo "<use xlink:href='public/rain/rain.svg#rain'/>";
-                        echo "</svg>";
+                        // echo "<svg class='temp_rain icon-no-stroke'>";   
+                        //     echo "<use xlink:href='public/rain/rain.svg#rain'/>";
+                        // echo "</svg>";
                     // }
 
                     // icons de pluie

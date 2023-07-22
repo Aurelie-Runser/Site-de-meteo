@@ -1,0 +1,9 @@
+#storm{
+    animation: anim-storm 2s infinite;
+}
+
+@keyframes anim-storm {
+    25% { opacity: 1;}
+    50% { opacity: 0;}
+    75% { opacity: 1;}
+}
