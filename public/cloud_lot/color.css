@@ -1,18 +1,18 @@
-#cloud_lot{
-    transform: translate(10%, 10%);
-}
-
 .cloud_lot-nuage_ar{
     fill:#333;
+    scale: 0.94;
+    transform-origin: center;
     animation: anim-cloud_lot 2s infinite alternate ease-in-out;
 }
 
 .cloud_lot-nuage_av{
     fill:#aaaaa6;
+    scale: 0.94;
+    transform-origin: center;
     animation: anim-cloud_lot 2s infinite alternate-reverse ease-in-out;
 }
 
 @keyframes anim-cloud_lot {
-    from { transform: translateX(5px);}
-    to { transform: translateX(-5px);}
+    from { transform: translateX(20px);}
+    to { transform: translateX(0px);}
 }

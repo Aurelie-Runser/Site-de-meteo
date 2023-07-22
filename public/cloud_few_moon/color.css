@@ -6,10 +6,6 @@
     fill:#eee;
 }
 
-#cloud_few_moon{
-    transform: translate(10%, 10%);
-}
-
 #cloud_few_moon-nuage{
     animation: anim-cloud_few_moon-nuage 2s infinite alternate ease-in-out;
 }
