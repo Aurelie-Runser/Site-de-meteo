@@ -1,0 +1,8 @@
+.wind_icon:hover{
+    animation: anim-wind 3s infinite alternate ease-in-out;
+}
+
+@keyframes anim-wind {
+    from { transform: translateX(-10px);}
+    to { transform: translateX(10px);}
+}

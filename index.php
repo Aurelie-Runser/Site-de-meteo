@@ -166,104 +166,103 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $sunset = $_SESSION['sunset'];
 
                 echo "<div class='temp_icon'>";
+                    // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
+                    // icon d'orage
+                    // if ($temps == "Thunderstorm"){
+                    //     echo "<svg class='temp_storm'>";   
+                    //         echo "<use xlink:href='public/storm.svg#storm'/>";
+                    //     echo "</svg>";
 
-                // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
-                // icon d'orage
-                // if ($temps == "Thunderstorm"){
-                //     echo "<svg class='temp_storm'>";   
-                //         echo "<use xlink:href='public/storm.svg#storm'/>";
-                //     echo "</svg>";
+                    // } 
 
-                // } 
+                    // icon de douce pluie
+                    // elseif ($temps == "Drizzle"){
+                    //     echo "<svg class='temp_rain icon-no-stroke'>";   
+                    //         echo "<use xlink:href='public/rain.svg#rain'/>";
+                    //     echo "</svg>";
+                    // }
 
-                // icon de douce pluie
-                // elseif ($temps == "Drizzle"){
-                //     echo "<svg class='temp_rain icon-no-stroke'>";   
-                //         echo "<use xlink:href='public/rain.svg#rain'/>";
-                //     echo "</svg>";
-                // }
-
-                // icons de pluie
-                // elseif ($temps == "Rain"){
-                //     if ($description == "pluie verglaçante"){
-                //         // pluie gelée
-                //         // Attention : couleur définit dans "main.scss"
-                //         echo "<svg class='temp_snow'>";   
-                //             echo "<use xlink:href='public/snow.svg#snow'/>";
-                //         echo "</svg>";
-                //     }
-                    
-                //     else{
-                //         // pluie simple
-                        // echo "<svg class='temp_rain_only icon-no-stroke'>";   
-                        //     echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
-                        // echo "</svg>";
-                //     }
-                // }
-
-                // icon de la neige
-                // elseif ($temps == "Snow"){
-                    // echo "<svg class='temp_snow'>";   
-                    //     echo "<use xlink:href='public/snow/snow.svg#snow'/>";
-                    // echo "</svg>";
-                // }
-
-                // icon du soleil ou de la lune
-                // elseif ($temps == "Clear"){
-                //     if (($sunrise <= $heure) or ($heure > $sunset)){
-                //         // icon de soleil
-                //         echo "<svg class='temp_sun icon-no-stroke'>";   
-                //             echo "<use xlink:href='public/sun/sun.svg#sun'/>";
-                //         echo "</svg>";
-                //     }
-                    
-                //     else{
-                        // icon de la lune
-                        // echo "<svg class='temp_moon'>";   
-                        //     echo "<use xlink:href='public/moon/moon.svg#moon'/>";
-                        // echo "</svg>";
-                //     }
-                // }
-
-                // icons de nuages
-                // elseif ($temps == "Clouds"){
-                //     if ($description == "peu de nuage"){
-                //         if (($sunrise <= $heure) or ($heure > $sunset)){
-                //             // icon peu de nuage le jour
-                            //     echo "<svg class='temp_cloud_few'>";   
-                            //     echo "<use xlink:href='public/cloud_few/cloud_few.svg#cloud_few'/>";
-                            // echo "</svg>";
-                //         }
+                    // icons de pluie
+                    // elseif ($temps == "Rain"){
+                    //     if ($description == "pluie verglaçante"){
+                    //         // pluie gelée
+                    //         // Attention : couleur définit dans "main.scss"
+                    //         echo "<svg class='temp_snow'>";   
+                    //             echo "<use xlink:href='public/snow.svg#snow'/>";
+                    //         echo "</svg>";
+                    //     }
                         
-                //         else {
-                //             // icon peu de nuage la nuit
-                            // echo "<svg class='temp_cloud_few_moon icon-no-stroke'>";   
-                            //     echo "<use xlink:href='public/cloud_few_moon/cloud_few_moon.svg#cloud_few_moon'/>";
+                    //     else{
+                    //         // pluie simple
+                            // echo "<svg class='temp_rain_only icon-no-stroke'>";   
+                            //     echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
                             // echo "</svg>";
-                //             }
-                //     }
-                    
-                //     elseif ($description == "partiellement nuageux"){
-                //         // icon nuage
-                        // echo "<svg class='temp_cloud icon-no-stroke'>";   
-                        //     echo "<use xlink:href='public/cloud/cloud.svg#cloud'/>";
-                        // echo "</svg>";
-                //     }
-                    
-                //     else {
-                //         // icon nuage
-                        // echo "<svg class='temp_cloud_lot icon-no-stroke'>";   
-                        //     echo "<use xlink:href='public/cloud_lot/cloud_lot.svg#cloud_lot'/>";
-                        // echo "</svg>";
-                //     }
-                // }
+                    //     }
+                    // }
 
-                // icon du bruillard
-                // else{
-                    // echo "<svg class='temp_mist icon-no-stroke'>";   
-                    //     echo "<use xlink:href='public/mist/mist.svg#mist'/>";
-                    // echo "</svg>";
-                // }
+                    // icon de la neige
+                    // elseif ($temps == "Snow"){
+                        // echo "<svg class='temp_snow'>";   
+                        //     echo "<use xlink:href='public/snow/snow.svg#snow'/>";
+                        // echo "</svg>";
+                    // }
+
+                    // icon du soleil ou de la lune
+                    // elseif ($temps == "Clear"){
+                    //     if (($sunrise <= $heure) or ($heure > $sunset)){
+                    //         // icon de soleil
+                    //         echo "<svg class='temp_sun icon-no-stroke'>";   
+                    //             echo "<use xlink:href='public/sun/sun.svg#sun'/>";
+                    //         echo "</svg>";
+                    //     }
+                        
+                    //     else{
+                            // icon de la lune
+                            // echo "<svg class='temp_moon'>";   
+                            //     echo "<use xlink:href='public/moon/moon.svg#moon'/>";
+                            // echo "</svg>";
+                    //     }
+                    // }
+
+                    // icons de nuages
+                    // elseif ($temps == "Clouds"){
+                    //     if ($description == "peu de nuage"){
+                    //         if (($sunrise <= $heure) or ($heure > $sunset)){
+                    //             // icon peu de nuage le jour
+                                //     echo "<svg class='temp_cloud_few'>";   
+                                //     echo "<use xlink:href='public/cloud_few/cloud_few.svg#cloud_few'/>";
+                                // echo "</svg>";
+                    //         }
+                            
+                    //         else {
+                    //             // icon peu de nuage la nuit
+                                // echo "<svg class='temp_cloud_few_moon icon-no-stroke'>";   
+                                //     echo "<use xlink:href='public/cloud_few_moon/cloud_few_moon.svg#cloud_few_moon'/>";
+                                // echo "</svg>";
+                    //             }
+                    //     }
+                        
+                    //     elseif ($description == "partiellement nuageux"){
+                    //         // icon nuage
+                            // echo "<svg class='temp_cloud icon-no-stroke'>";   
+                            //     echo "<use xlink:href='public/cloud/cloud.svg#cloud'/>";
+                            // echo "</svg>";
+                    //     }
+                        
+                    //     else {
+                    //         // icon nuage
+                            // echo "<svg class='temp_cloud_lot icon-no-stroke'>";   
+                            //     echo "<use xlink:href='public/cloud_lot/cloud_lot.svg#cloud_lot'/>";
+                            // echo "</svg>";
+                    //     }
+                    // }
+
+                    // icon du bruillard
+                    // else{
+                        // echo "<svg class='temp_mist icon-no-stroke'>";   
+                        //     echo "<use xlink:href='public/mist/mist.svg#mist'/>";
+                        // echo "</svg>";
+                    // }
 
                 echo "</div>";
                 
@@ -322,7 +321,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // s'il y a du vent, affiche l'icon avec le vent, sinon affiche l'icon avec le vent barré
                         if ($_SESSION['vitesse_vent'] != 0){
                             echo "<svg class='wind_icon'>";   
-                                echo "<use xlink:href='public/wind.svg#wind' alt='icon de la pluie'/>";
+                                echo "<use xlink:href='public/wind/wind.svg#wind' alt='icon de la pluie'/>";
                             echo "</svg>";
                         } else {
                             echo "<svg class='wind_no_icon'>";   
@@ -422,9 +421,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
                     session_unset();
                     session_destroy();
-                }
-            ?>
-        </div>
+            }
+        ?>
+    </div>
                 
 </body>
 </html>
