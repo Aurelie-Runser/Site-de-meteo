@@ -363,7 +363,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($_SESSION['pluie_1h'] != 0){
                         echo "<div class='rain-snow'>";
                             // icon de la pluie
-                            echo "<svg class='rain_icon'>";   
+                            echo "<svg class='rain_icon icon-no-stroke'>";   
                                 echo "<use xlink:href='public/rain_only.svg#rain_only' alt='icon de la pluie'/>";
                             echo "</svg>";
 

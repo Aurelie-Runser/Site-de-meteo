@@ -137,6 +137,11 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
             svg{
                 stroke: $txt-color-light;
             }
+
+            // suppression de la couleur des bordures pour les icons qui n'en ont pas
+            .icon-no-stroke{
+                stroke: none;
+            }
         }
         
 

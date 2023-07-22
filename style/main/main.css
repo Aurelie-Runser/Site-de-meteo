@@ -111,6 +111,11 @@ Seule une est appeler en fonction de l'heure déterminer grace à la fonction ph
 .nighttime .resultat .rain-snow svg {
   stroke: #eee;
 }
+.nighttime .resultat .infos .icon-no-stroke,
+.nighttime .resultat .wind .icon-no-stroke,
+.nighttime .resultat .rain-snow .icon-no-stroke {
+  stroke: none;
+}
 
 .sunrise-sunset {
   background-color: #f5c9b3;
