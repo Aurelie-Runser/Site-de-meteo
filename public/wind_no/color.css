@@ -1,0 +1,10 @@
+#wind_no-rect:hover ~ #wind_no-trait{
+    animation: anim-wind_no-trait 3s infinite ease-in-out;
+}
+
+@keyframes anim-wind_no-trait {
+    0% { transform: translate(-100%, -100%);}
+    45% { transform: translate(0, 0);}
+    55% { transform: translate(0, 0);}
+    100% { transform: translate(100%, 100%);}
+}

@@ -325,7 +325,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "</svg>";
                         } else {
                             echo "<svg class='wind_no_icon'>";   
-                                echo "<use xlink:href='public/wind_no.svg#wind_no' alt='icon de la pluie'/>";
+                                echo "<use xlink:href='public/wind_no/wind_no.svg#wind_no' alt='icon de la pluie'/>";
                             echo "</svg>";
                         }
 
