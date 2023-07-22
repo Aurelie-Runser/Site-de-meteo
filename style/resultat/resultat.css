@@ -27,8 +27,17 @@
   border-width: 5px;
   background-color: rgba(238, 238, 238, 0.5019607843);
 }
-.resultat .temperature img {
+.resultat .temperature .temp_icon {
+  flex: none;
   width: 50%;
+  height: 100%;
+  margin: 0 10px 0 -10px;
+}
+.resultat .temperature .temp_icon svg {
+  display: block;
+  margin: auto auto;
+  width: 90%;
+  height: 100%;
 }
 .resultat .temperature .temp_txt .txt_temperature {
   margin-bottom: 1rem;

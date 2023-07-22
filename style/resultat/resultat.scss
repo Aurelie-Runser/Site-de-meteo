@@ -34,8 +34,20 @@
         background-color: $bg-txt;
 
         // largeur de l'icon
-        img{
+
+        .temp_icon{
+            flex: none;
             width: 50%;
+            height: 100%;
+            margin: 0 10px 0 -10px;
+            // border: $border-test;
+
+            svg{
+                display: block;
+                margin: auto auto;
+                width: 90%;
+                height: 100%;
+            }
         }
         
         // style et taille de chaque texe
