@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="sunset" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768">
+  <path id="sunset-rect" class="sunset-rect" d="m0,0h768v768H0V0Z"/>
+  <path id="sunset-traits" class="sunset-sun" d="m96,544h32m512,0h32m-492.8-204.8l22.4,22.4m387.2-22.4l-22.4,22.4"/>
+  <path id="sunset-sol" class="sunset-sun" d="m96,672h576"/>
+  <path id="sunset-traits" class="sunset-sun" d="m384,96v192l96-96m-192,0l96,96"/>
+  <path id="sunset-cercle" class="sunset-sun" d="m256,543.97c.03-70.69,57.37-127.97,128.06-127.94,70.64.03,127.9,57.29,127.94,127.94"/>
+</svg>

@@ -409,7 +409,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         
                         echo "<div class='sunset'>";
                             echo "<svg class='icon_sunset'>";   
-                                echo "<use xlink:href='public/sunset.svg#sunset'/>";
+                                echo "<use xlink:href='public/sunset/sunset.svg#sunset'/>";
                             echo "</svg>";
 
                             echo "<p>" . $sunset . "<p>";

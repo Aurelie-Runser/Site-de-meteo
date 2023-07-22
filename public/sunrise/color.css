@@ -12,10 +12,10 @@
 
 #sunrise-rect:hover ~ #sunrise-traits{
     transform-origin: center;
-    animation: anim-sunrise_traits 1s infinite alternate-reverse ease-in-out;
+    animation: anim-sunrise_traits 1s infinite alternate ease-in-out;
 }
 
 @keyframes anim-sunrise_traits {
-    from { transform: scale(1.1);}
-    to { transform: scale(0.9);}
+    from { transform: scale(0.9);}
+    to { transform: scale(1.1);}
 }
