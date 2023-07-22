@@ -169,9 +169,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
                     // icon d'orage
                     // if ($temps == "Thunderstorm"){
-                        echo "<svg class='temp_storm'>";   
-                            echo "<use xlink:href='public/storm/storm.svg#storm'/>";
-                        echo "</svg>";
+                        // echo "<svg class='temp_storm'>";   
+                        //     echo "<use xlink:href='public/storm/storm.svg#storm'/>";
+                        // echo "</svg>";
 
                     // } 
 
@@ -308,7 +308,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "<p class='info_titre'>visibilité</p>";
                             
                             echo "<svg class='visibility_icon'>";   
-                                echo "<use xlink:href='public/visibility.svg#visibility' alt='icon de la visibilité'/>";
+                                echo "<use xlink:href='public/visibility/visibility.svg#visibility' alt='icon de la visibilité'/>";
                             echo "</svg>";  
 
                             echo "<p class='info_donne'>" . $_SESSION['visibilite'] . " m</p>";

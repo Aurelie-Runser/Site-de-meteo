@@ -1,0 +1,7 @@
+#visibility{
+    transition: all 0.2s ease-in-out;
+}
+
+#visibility:hover{
+    scale: 1.2;
+}
