@@ -285,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "<p class='info_titre'>pression</p>";
 
                             echo "<svg class='pression_icon'>";   
-                                echo "<use xlink:href='public/pressure.svg#pressure' alt='icon de la pression atatmosphérique'/>";
+                                echo "<use xlink:href='public/pressure/pressure.svg#pressure' alt='icon de la pression atatmosphérique'/>";
                             echo "</svg>";
 
                             echo "<p class='info_donne'>" . $_SESSION['pression'] . " hPa</p>";

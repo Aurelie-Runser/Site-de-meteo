@@ -1,0 +1,14 @@
+#pressure-trait_1,
+#pressure-trait_2{
+    transition: all 0.2s ease-in-out;
+}
+
+#pressure-rect:hover ~ #pressure-trait_1{
+    transform-origin: 30% bottom;
+    scale: 0.8;
+}
+
+#pressure-rect:hover ~ #pressure-trait_2{
+    transform-origin: 70% bottom;
+    scale: 0.8;
+}
