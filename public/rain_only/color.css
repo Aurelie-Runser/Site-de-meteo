@@ -1,0 +1,29 @@
+.rain_only-trait{
+    fill:#1eb0d5;
+}
+
+#rain_only-trait_1{
+    animation: anim-rain_only-trait 4s 0.6s infinite ease-in-out;
+}
+
+#rain_only-trait_2{
+    animation: anim-rain_only-trait 4s 0.4s infinite ease-in-out;
+}
+
+#rain_only-trait_3{
+    animation: anim-rain_only-trait 4s 0.2s infinite ease-in-out;
+}
+
+#rain_only-trait_4{
+    animation: anim-rain_only-trait 4s infinite ease-in-out;
+}
+
+@keyframes anim-rain_only-trait {
+    0% { opacity: 0%;
+        transform: translate(-40%, -100%);}
+    50% { opacity: 1;
+        transform: translate(0, 0);}
+    85% { opacity: 1;}
+    100% { opacity: 0;
+        transform: translate(0, 0);}
+}

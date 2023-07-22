@@ -187,16 +187,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     //     if ($description == "pluie verglaçante"){
                     //         // pluie gelée
                     //         // Attention : couleur définit dans "main.scss"
-                    //         echo "<svg class='temp_snow'>";   
-                    //             echo "<use xlink:href='public/snow.svg#snow'/>";
-                    //         echo "</svg>";
+                            // echo "<svg class='temp_snow'>";   
+                            //     echo "<use xlink:href='public/snow/snow.svg#snow'/>";
+                            // echo "</svg>";
                     //     }
                         
                     //     else{
                     //         // pluie simple
-                            // echo "<svg class='temp_rain_only icon-no-stroke'>";   
-                            //     echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
-                            // echo "</svg>";
+                            echo "<svg class='temp_rain_only icon-no-stroke'>";   
+                                echo "<use xlink:href='public/rain_only/rain_only.svg#rain_only'/>";
+                            echo "</svg>";
                     //     }
                     // }
 
@@ -351,7 +351,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($_SESSION['pluie_1h'] != 0){
                         echo "<div class='rain-snow'>";
                             echo "<svg class='rain_icon'>";   
-                                echo "<use xlink:href='public/rain_only.svg#rain_only' alt='icon de la pluie'/>";
+                                echo "<use xlink:href='public/rain_only/rain_only.svg#rain_only' alt='icon de la pluie'/>";
                             echo "</svg>";
 
                             echo "<div>";
