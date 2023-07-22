@@ -1,0 +1,30 @@
+.rain-nuage{
+    fill:#aaaaa6;
+}
+
+.rain-trait{
+    fill:#1eb0d5;
+}
+
+#rain-trait_1{
+    animation: anim-rain-trait 4s infinite ease-in-out;
+}
+
+#rain-trait_2{
+    animation: anim-rain-trait 4s 0.2s infinite ease-in-out;
+}
+
+#rain-trait_3{
+    animation: anim-rain-trait 4s 0.4s infinite ease-in-out;
+}
+
+#rain-trait_4{
+    animation: anim-rain-trait 4s 0.6s infinite ease-in-out;
+}
+
+@keyframes anim-rain-trait {
+    0% { opacity: 0}
+    50% { opacity: 1;}
+    85% { opacity: 1;}
+    100% { opacity: 0;}
+}
