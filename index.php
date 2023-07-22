@@ -1,15 +1,19 @@
 <?php
+
+// code PHP pour récupérer les donné de l'api d'OpenWeatherMap
 session_start();
 
+// initialisation du message d'erreur
 $message = "";
 
+// si le formumaire est complet et envoyé, faire la requete à l'api avec le nom de la ville et ma clé
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
-    $apiKey = "???";
+    $apiKey = "af0bed8924751e07bce0f22544b547e7";
 
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&lang=fr&appid=" . $apiKey;
 
-    // Initialisation de cURL
+    // Initialisation de cURL pour envoyer la requete
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -84,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sunsetLocale = date('H:i:s', $sunsetUTC + $timezoneOffset);
         
 
-        // Enregistrement des données dans la session
+        // Enregistrement des données dans la session pour pouvoir les afficher dans le code HTML
         $_SESSION['name'] = $name;
         $_SESSION['temps'] = $temps;
         $_SESSION['description'] = $description;
@@ -107,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['pays'] = $pays;
         $_SESSION['heure'] = $heureLocale;
     } else {
+        // si les données n'ont pas pue être récupéré, la variable "message" se complete
         $message = "Désolé, la ville que vous recherchez ne figure pas dans la base de données. <br> Pensez à bien écrire le nom complet de la ville, tiret compris, et vérifiez son orthographe.";
     }
 }
@@ -150,6 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="resultat">
         <?php
             if (!empty($message)) {
+                // message qui s'affiche lorsque la ville n'est pas trouvée
                 echo "<div class='resultat_msg'>";
                 echo "<img class='msg_icon' src='public/question.svg' alt='icon d'un point d'intérogation'/>";
                 echo "<p class='msg_txt'>$message</p>";
@@ -263,6 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "</svg>";
                 }
                 
+                    // les textes affichés à côté de la grande icon
                     echo "<div class='temp_txt'>";
                         echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
                         echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
@@ -277,6 +284,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     // 2ème zone : pression + humidite + visibilité
                     echo "<div class='infos'>";
+
+                        // pression
                         echo "<div class='info_pression'>";
                             echo "<p class='info_titre'>pression</p>";
 
@@ -289,6 +298,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         echo "<span></span>";
                         
+                        // humidité
                         echo "<div class='info_humidity'>";
                             echo "<p class='info_titre'>humidité</p>";
 
@@ -301,6 +311,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         echo "<span></span>";
 
+                        // visibilité
                         echo "<div class='info_visibility'>";
                             echo "<p class='info_titre'>visibilité</p>";
                             
@@ -326,6 +337,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo "</svg>";
                         }
 
+                        // vitesse et angle du vent
                         echo "<div>";
                             echo "<p class='wind_speed'>
                                 <span>
@@ -347,10 +359,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // si != 0, afficher la pluie
                     if ($_SESSION['pluie_1h'] != 0){
                         echo "<div class='rain-snow'>";
+                            // icon de la pluie
                             echo "<svg class='rain_icon'>";   
                                 echo "<use xlink:href='public/rain_only.svg#rain_only' alt='icon de la pluie'/>";
                             echo "</svg>";
 
+                            // texte
                             echo "<div>";
                                 echo "<p class='rain_txt'>pluie tombée</p>";
 
@@ -371,11 +385,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // si != 0, afficher la neige
                     if ($_SESSION['neige_1h'] != 0){
                         echo "<div class='rain-snow'>";
+
+                            // icon de la neige
                             echo "<svg class='snow_icon'>";   
                                 echo "<use xlink:href='public/snow.svg#snow' alt='icon de la neige'/>";
                             echo "</svg>";
 
-
+                            // texte
                             echo "<div>";
                                 echo "<p class='rain_txt'>neige tombée</p>";
 
@@ -394,20 +410,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     
                     // 4ème zone : heure de lever et coucher du soleil
                     echo "<div class='sunrise-set'>";
-
+                        // lever de soleil
                         echo "<div class='sunrise'>";
+                            // icon lever de soleil
                             echo "<svg class='icon_sunrise'>";   
                                 echo "<use xlink:href='public/sunrise.svg#sunrise'/>";
                             echo "</svg>";
 
+                            // heure lever de soleil
                             echo "<p>" . $sunrise . "<p>";
                         echo "</div>";
                         
+                        // coucher de soleil
                         echo "<div class='sunset'>";
+                            // icon coucher de soleil
                             echo "<svg class='icon_sunset'>";   
                                 echo "<use xlink:href='public/sunset.svg#sunset'/>";
                             echo "</svg>";
 
+                            // heure coucher de soleil
                             echo "<p>" . $sunset . "<p>";
                         echo "</div>";
                     echo "</div>";
@@ -415,18 +436,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "</div>";
 
 
-                    // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
-                    session_unset();
-                    session_destroy();
-                }
-            ?>
-        </div>
+                // Supprimez les données de la session pour éviter les affichages indésirables lors des rechargements de la page
+                session_unset();
+                session_destroy();
+            }
+        ?>
+    </div>
                 
 </body>
 </html>
 
-<?php
 
+<?php
 // modifie la couleur du fond en fonction de l'heure
 function determineBackgroundColor($heureActuelle, $heureLeverSoleil, $heureCoucherSoleil) {
     // formatage des heures pour pouvoir les manipuler
@@ -455,7 +476,4 @@ function determineBackgroundColor($heureActuelle, $heureLeverSoleil, $heureCouch
         return 'sunrise-sunset';
     }
 }
-  
-  
-
 ?>
