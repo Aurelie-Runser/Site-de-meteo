@@ -203,9 +203,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // icon de la neige
                 // elseif ($temps == "Snow"){
-                    echo "<svg class='temp_snow'>";   
-                        echo "<use xlink:href='public/snow/snow.svg#snow'/>";
-                    echo "</svg>";
+                    // echo "<svg class='temp_snow'>";   
+                    //     echo "<use xlink:href='public/snow/snow.svg#snow'/>";
+                    // echo "</svg>";
                 // }
 
                 // icon du soleil ou de la lune
@@ -373,7 +373,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
                     // 6ème zone : la neige
                     // si != 0, afficher la neige
-                    if ($_SESSION['neige_1h'] == 0){
+                    if ($_SESSION['neige_1h'] != 0){
                         echo "<div class='rain-snow'>";
                             echo "<svg class='snow_icon'>";   
                                 echo "<use xlink:href='public/snow/snow.svg#snow' alt='icon de la neige'/>";
@@ -401,7 +401,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         echo "<div class='sunrise'>";
                             echo "<svg class='icon_sunrise'>";   
-                                echo "<use xlink:href='public/sunrise.svg#sunrise'/>";
+                                echo "<use xlink:href='public/sunrise/sunrise.svg#sunrise'/>";
                             echo "</svg>";
 
                             echo "<p>" . $sunrise . "<p>";

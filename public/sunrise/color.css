@@ -1,0 +1,21 @@
+#sunrise-rect,
+.sunrise-sun{
+    fill:transparent;
+}
+
+.sunrise-sun{
+    stroke:#ff9300;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:48px;
+}
+
+#sunrise-rect:hover ~ #sunrise-traits{
+    transform-origin: center;
+    animation: anim-sunrise_traits 1s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes anim-sunrise_traits {
+    from { transform: scale(1.1);}
+    to { transform: scale(0.9);}
+}
