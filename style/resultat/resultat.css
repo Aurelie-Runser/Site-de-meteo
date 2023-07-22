@@ -36,7 +36,7 @@
 .resultat .temperature .temp_icon svg {
   display: block;
   margin: auto auto;
-  width: 80%;
+  width: 90%;
   height: 100%;
 }
 .resultat .temperature .temp_txt .txt_temperature {

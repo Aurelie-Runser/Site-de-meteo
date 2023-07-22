@@ -18,21 +18,23 @@
 @import url("public/cloud_few/color.css");
 @import url("public/cloud_few_moon/color.css");
 @import url("public/cloud_lot/color.css");
-@import url("public/sun/color.css");
-@import url("public/humidity/color.css");
 @import url("public/mist/color.css");
 @import url("public/moon/color.css");
-@import url("public/pressure/color.css");
-@import url("public/snow/color.css");
-@import url("public/sunrise/color.css");
-@import url("public/sunset/color.css");
-@import url("public/wind/color.css");
-@import url("public/wind_no/color.css");
-@import url("public/rain_only/color.css");
 @import url("public/rain/color.css");
+@import url("public/rain_only/color.css");
+@import url("public/snow/color.css");
 @import url("public/storm/color.css");
+@import url("public/sun/color.css");
+
+@import url("public/pressure/color.css");
+@import url("public/humidity/color.css");
 @import url("public/visibility/color.css");
 
+@import url("public/wind/color.css");
+@import url("public/wind_no/color.css");
+
+@import url("public/sunrise/color.css");
+@import url("public/sunset/color.css");
 
 *{
     margin: 0;
