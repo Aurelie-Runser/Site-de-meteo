@@ -122,7 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site météo</title>
+    <title>Mon site de Météo</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
 
     <link href="style.css" rel="stylesheet">
 
