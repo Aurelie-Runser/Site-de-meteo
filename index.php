@@ -215,7 +215,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     // icon du soleil ou de la lune
                     elseif ($temps == "Clear"){
-                        if (($sunrise <= $heure) or ($heure > $sunset)){
+                        if (($sunrise <= $heure) and ($heure < $sunset)){
                             // icon de soleil
                             echo "<svg class='temp_sun'>";   
                                 echo "<use xlink:href='public/sun.svg#sun'/>";
@@ -233,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // icons de nuages
                     elseif ($temps == "Clouds"){
                         if ($description == "peu nuageux"){
-                            if (($sunrise <= $heure) or ($heure > $sunset)){
+                            if (($sunrise <= $heure) and ($heure < $sunset)){
                                 // icon peu de nuage le jour
                                 echo "<svg class='temp_few_cloud icon-no-stroke'>";   
                                     echo "<use xlink:href='public/few_cloud.svg#few_cloud'/>";
