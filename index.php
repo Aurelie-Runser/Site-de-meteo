@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_SESSION['name'])){
             echo "<h1>Météo de <span class='titre_ville'>" . $_SESSION['name'] . "</span>, " .  $_SESSION['pays'] . "</h1>";
         } else {
-            echo "<h1>Ma Météo</h1>";
+            echo "<h1>Recherchez une ville dont vous voulez la Météo</h1>";
         }
     ?>
     
@@ -449,7 +449,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 
 <footer>
-    <p>Ce site ne collecte aucune donnée.</p>
+    <p>Ce site ne collecte aucune donnée personnelle.</p>
     <p>Site réalisé par <a href="https://portfolio.aurelierunser.fr/" target="_blank">Aurélie Runser</a> en 2023.</p>
 </footer>
 
