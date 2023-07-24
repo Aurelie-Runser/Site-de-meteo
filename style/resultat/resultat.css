@@ -175,6 +175,9 @@
   gap: 5px;
   font-weight: bold;
 }
+.resultat .resultat_tableau .sunrise-set div p {
+  text-align: center;
+}
 .resultat .resultat_tableau .rain-snow {
   flex-wrap: wrap;
   justify-content: space-around;

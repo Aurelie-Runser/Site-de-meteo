@@ -79,13 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $timezoneOffset = $data->timezone;
 
         // Conversion de l'heure actuelle en heure locale
-        $heureLocale = date('H:i:s', time() + $timezoneOffset);
+        $heureLocale = date('H:i', time() + $timezoneOffset);
         
         // Récupération des heures de lever et coucher du soleil en heure locale
         $sunriseUTC = $data->sys->sunrise;
         $sunsetUTC = $data->sys->sunset;
-        $sunriseLocale = date('H:i:s', $sunriseUTC + $timezoneOffset);
-        $sunsetLocale = date('H:i:s', $sunsetUTC + $timezoneOffset);
+        $sunriseLocale = date('H:i', $sunriseUTC + $timezoneOffset);
+        $sunsetLocale = date('H:i', $sunsetUTC + $timezoneOffset);
         
 
         // Enregistrement des données dans la session pour pouvoir les afficher dans le code HTML
@@ -309,7 +309,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 echo "<use xlink:href='public/humidity.svg#humidity' alt='icon de l'humidité'/>";
                             echo "</svg>";  
 
-                            echo "<p class='info_donne'>" . $_SESSION['humidite'] . " g/m3</p>";
+                            echo "<p class='info_donne'>" . $_SESSION['humidite'] . " g/m<sup>3</sup></p>";
                         echo "</div>";
 
                         echo "<span></span>";
@@ -353,7 +353,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <span>
                                     direction du vent
                                 : </span>" 
-                                . $_SESSION['direction_vent'] . " °
+                                . $_SESSION['direction_vent'] . "°
                             </p>";
                         echo "</div>";
                     echo "</div>";       
@@ -460,9 +460,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // modifie la couleur du fond en fonction de l'heure
 function determineBackgroundColor($heureActuelle, $heureLeverSoleil, $heureCoucherSoleil) {
     // formatage des heures pour pouvoir les manipuler
-    $heureActuelle = DateTime::createFromFormat('H:i:s', $heureActuelle);
-    $heureLeverSoleil = DateTime::createFromFormat('H:i:s', $heureLeverSoleil);
-    $heureCoucherSoleil = DateTime::createFromFormat('H:i:s', $heureCoucherSoleil);
+    $heureActuelle = DateTime::createFromFormat('H:i', $heureActuelle);
+    $heureLeverSoleil = DateTime::createFromFormat('H:i', $heureLeverSoleil);
+    $heureCoucherSoleil = DateTime::createFromFormat('H:i', $heureCoucherSoleil);
   
     // création de la plage horaire pendant laquelle le soleil se lève
     $heureLeverSoleilStart = clone $heureLeverSoleil;
