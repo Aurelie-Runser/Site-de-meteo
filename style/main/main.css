@@ -1,7 +1,6 @@
 @charset "UTF-8";
 body {
-  padding: 5vw;
-  padding-top: 5vh;
+  padding: 5vh 5vw 0 5vw;
   background-color: #add8e6;
   color: #333;
   /* titre de la page "Ma Météo" */

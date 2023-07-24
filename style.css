@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,700;1,500;1,700&display=swap');
 
 /* principales (fond, titre, couleurs) */
+@import url("style/footer/footer.css");
+
+/* principales (fond, titre, couleurs) */
 @import url("style/main/main.css");
 
 /* message d'erreur affiché lorsque la ville n'a pas été trouvé */

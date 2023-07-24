@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+footer{
+    margin: 5vh -5vw 0 -5vw;
+    padding: 20px 5vw;
+    background: $bg-txt;
+
+    p{
+        margin: 0.5rem 0;
+
+        a{
+            font-weight: bold;
+            color: inherit;
+            
+            &:hover{
+                color: $bg-n;
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,11 +1,10 @@
 @import "../variables.scss";
 
 body{      
-    padding: 5vw;
-    padding-top: 5vh; 
+    padding: 5vh 5vw 0 5vw;
     background-color: $bg-d;
     color: $txt-color;
-    
+        
     /* titre de la page "Ma Météo" */
     h1{
         margin: 5% 0;
@@ -64,8 +63,6 @@ body{
             }
         }
     }
-    
-
 }
 
 /* Couleurs du fond.

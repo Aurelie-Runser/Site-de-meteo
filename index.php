@@ -166,111 +166,111 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // 1er zone : température avec grand icon
                 echo "<div class='temperature'>";
 
-                $temps = $_SESSION['temps'];
-                $heure = $_SESSION['heure'];
-                $sunrise = $_SESSION['sunrise'];
-                $sunset = $_SESSION['sunset'];
+                    $temps = $_SESSION['temps'];
+                    $heure = $_SESSION['heure'];
+                    $sunrise = $_SESSION['sunrise'];
+                    $sunset = $_SESSION['sunset'];
 
-                // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
+                    // fonction qui modifie la grande icon en fonction de la météo, de "$temps" et de "$description"
 
-                echo "<div class='temp_icon'>";
-                    // icon d'orage
-                    if ($temps == "Thunderstorm"){
-                        echo "<svg class='temp_storm'>";   
-                            echo "<use xlink:href='public/storm.svg#storm'/>";
-                        echo "</svg>";
-                    } 
+                    echo "<div class='temp_icon'>";
+                        // icon d'orage
+                        if ($temps == "Thunderstorm"){
+                            echo "<svg class='temp_storm'>";   
+                                echo "<use xlink:href='public/storm.svg#storm'/>";
+                            echo "</svg>";
+                        } 
 
-                    // icon de douce pluie
-                    elseif ($temps == "Drizzle"){
-                        echo "<svg class='temp_rain icon-no-stroke'>";   
-                            echo "<use xlink:href='public/rain.svg#rain'/>";
-                        echo "</svg>";
-                    }
+                        // icon de douce pluie
+                        elseif ($temps == "Drizzle"){
+                            echo "<svg class='temp_rain icon-no-stroke'>";   
+                                echo "<use xlink:href='public/rain.svg#rain'/>";
+                            echo "</svg>";
+                        }
 
-                    // icons de pluie
-                    elseif ($temps == "Rain"){
-                        if ($description == "pluie verglaçante"){
-                            // pluie gelée
-                            // Attention : couleur définit dans "main.scss"
+                        // icons de pluie
+                        elseif ($temps == "Rain"){
+                            if ($description == "pluie verglaçante"){
+                                // pluie gelée
+                                // Attention : couleur définit dans "main.scss"
+                                echo "<svg class='temp_snow'>";   
+                                    echo "<use xlink:href='public/snow.svg#snow'/>";
+                                echo "</svg>";
+                            }
+                            
+                            else{
+                                // pluie simple
+                                echo "<svg class='temp_rain_only icon-no-stroke'>";   
+                                    echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
+                                echo "</svg>";
+                            }
+                        }
+
+                        // icon de la neige
+                        elseif ($temps == "Snow"){
                             echo "<svg class='temp_snow'>";   
                                 echo "<use xlink:href='public/snow.svg#snow'/>";
                             echo "</svg>";
                         }
-                        
-                        else{
-                            // pluie simple
-                            echo "<svg class='temp_rain_only icon-no-stroke'>";   
-                                echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
-                            echo "</svg>";
-                        }
-                    }
 
-                    // icon de la neige
-                    elseif ($temps == "Snow"){
-                        echo "<svg class='temp_snow'>";   
-                            echo "<use xlink:href='public/snow.svg#snow'/>";
-                        echo "</svg>";
-                    }
-
-                    // icon du soleil ou de la lune
-                    elseif ($temps == "Clear"){
-                        if (($sunrise <= $heure) and ($heure < $sunset)){
-                            // icon de soleil
-                            echo "<svg class='temp_sun'>";   
-                                echo "<use xlink:href='public/sun.svg#sun'/>";
-                            echo "</svg>";
-                        }
-                        
-                        else{
-                            // icon de la lune
-                            echo "<svg class='temp_moon'>";   
-                                echo "<use xlink:href='public/moon.svg#moon'/>";
-                            echo "</svg>";
-                        }
-                    }
-
-                    // icons de nuages
-                    elseif ($temps == "Clouds"){
-                        if ($description == "peu nuageux"){
+                        // icon du soleil ou de la lune
+                        elseif ($temps == "Clear"){
                             if (($sunrise <= $heure) and ($heure < $sunset)){
-                                // icon peu de nuage le jour
-                                echo "<svg class='temp_few_cloud icon-no-stroke'>";   
-                                    echo "<use xlink:href='public/few_cloud.svg#few_cloud'/>";
+                                // icon de soleil
+                                echo "<svg class='temp_sun'>";   
+                                    echo "<use xlink:href='public/sun.svg#sun'/>";
+                                echo "</svg>";
+                            }
+                            
+                            else{
+                                // icon de la lune
+                                echo "<svg class='temp_moon'>";   
+                                    echo "<use xlink:href='public/moon.svg#moon'/>";
+                                echo "</svg>";
+                            }
+                        }
+
+                        // icons de nuages
+                        elseif ($temps == "Clouds"){
+                            if ($description == "peu nuageux"){
+                                if (($sunrise <= $heure) and ($heure < $sunset)){
+                                    // icon peu de nuage le jour
+                                    echo "<svg class='temp_few_cloud icon-no-stroke'>";   
+                                        echo "<use xlink:href='public/few_cloud.svg#few_cloud'/>";
+                                    echo "</svg>";
+                                }
+                                
+                                else {
+                                    // icon peu de nuage la nuit
+                                    echo "<svg class='temp_moon_few_cloud icon-no-stroke'>";   
+                                        echo "<use xlink:href='public/moon_few_cloud.svg#moon_few_cloud'/>";
+                                    echo "</svg>";
+                                }
+                            }
+                        
+                            elseif ($description == "partiellement nuageux"){
+                                // icon nuage
+                                echo "<svg class='temp_cloud icon-no-stroke'>";   
+                                    echo "<use xlink:href='public/cloud.svg#cloud'/>";
                                 echo "</svg>";
                             }
                             
                             else {
-                                // icon peu de nuage la nuit
-                                echo "<svg class='temp_moon_few_cloud icon-no-stroke'>";   
-                                    echo "<use xlink:href='public/moon_few_cloud.svg#moon_few_cloud'/>";
+                                // icon nuage
+                                echo "<svg class='temp_cloud_lot icon-no-stroke'>";   
+                                    echo "<use xlink:href='public/cloud_lot.svg#cloud_lot'/>";
                                 echo "</svg>";
                             }
                         }
-                    
-                        elseif ($description == "partiellement nuageux"){
-                            // icon nuage
-                            echo "<svg class='temp_cloud icon-no-stroke'>";   
-                                echo "<use xlink:href='public/cloud.svg#cloud'/>";
+
+                        // icon du bruillard
+                        else{
+                            echo "<svg class='temp_mist icon-no-stroke'>";   
+                                echo "<use xlink:href='public/mist.svg#mist'/>";
                             echo "</svg>";
                         }
-                        
-                        else {
-                            // icon nuage
-                            echo "<svg class='temp_cloud_lot icon-no-stroke'>";   
-                                echo "<use xlink:href='public/cloud_lot.svg#cloud_lot'/>";
-                            echo "</svg>";
-                        }
-                    }
 
-                    // icon du bruillard
-                    else{
-                        echo "<svg class='temp_mist icon-no-stroke'>";   
-                            echo "<use xlink:href='public/mist.svg#mist'/>";
-                        echo "</svg>";
-                    }
-
-                echo "</div>";
+                    echo "</div>";
                 
                     // les textes affichés à côté de la grande icon
                     echo "<div class='temp_txt'>";
@@ -447,6 +447,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
                 
 </body>
+
+<footer>
+    <p>Ce site ne collecte aucune donnée.</p>
+    <p>Site réalisé par <a href="https://portfolio.aurelierunser.fr/" target="_blank">Aurélie Runser</a> en 2023.</p>
+</footer>
+
 </html>
 
 
