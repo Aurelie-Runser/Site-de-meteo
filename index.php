@@ -184,8 +184,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         // icon de douce pluie
                         elseif ($temps == "Drizzle"){
-                            echo "<svg class='temp_rain icon-no-stroke'>";   
-                                echo "<use xlink:href='public/rain.svg#rain'/>";
+                            echo "<svg class='temp_rain_only icon-no-stroke'>";   
+                                echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
                             echo "</svg>";
                         }
 
@@ -201,8 +201,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             
                             else{
                                 // pluie simple
-                                echo "<svg class='temp_rain_only icon-no-stroke'>";   
-                                    echo "<use xlink:href='public/rain_only.svg#rain_only'/>";
+                                echo "<svg class='temp_rain icon-no-stroke'>";   
+                                    echo "<use xlink:href='public/rain.svg#rain'/>";
                                 echo "</svg>";
                             }
                         }
