@@ -9,7 +9,7 @@ $message = "";
 // si le formumaire est complet et envoyé, faire la requete à l'api avec le nom de la ville et ma clé
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
-    $apiKey = "af0bed8924751e07bce0f22544b547e7";
+    $apiKey = "af0bed8924751e07bce0f22544b547e7"; // ancienne clé API désactivéee
 
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&lang=fr&appid=" . $apiKey;
 
@@ -278,7 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "<p class='txt_temperature'>" . $_SESSION['temperature'] . "°C</p>";
                         echo "<p class='txt_ressentie'>ressentie " . $_SESSION['temp_ressentitC'] . "°C</p>";
                         echo "<p class='txt_minmax'>" . $_SESSION['temperature_min'] . "°C / " . $_SESSION['temperature_max'] . "°C</p>";
-                        echo "<p class='txt_heure'>" . $_SESSION['heure'] . "<p>";
+                        echo "<p class='txt_heure'>" . $_SESSION['heure'] . "</p>";
                         echo "<p class='txt_description'>" . $description . "</p>";
                         echo "<p class='txt_nuage'>" . $_SESSION['pourcentage_nuage'] . "% du ciel couvert</p>";
                     echo "</div>";  
