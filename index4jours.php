@@ -23,12 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Vérification des erreurs de cURL
         if ($response === false) {
             $error = curl_error($curl);
-            curl_close($curl);
             die("Erreur cURL : " . $error);
         }
-
-        // Fermeture de la requête cURL
-        curl_close($curl);
 
         // Conversion des données en JSON
         $data = json_decode($response);

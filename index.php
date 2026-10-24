@@ -9,7 +9,8 @@ $message = "";
 // si le formumaire est complet et envoyé, faire la requete à l'api avec le nom de la ville et ma clé
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = $_POST['ville'];
-    $apiKey = "af0bed8924751e07bce0f22544b547e7"; // ancienne clé API désactivéee
+    $apiKey = "???";
+
 
     $url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($ville) . "&lang=fr&appid=" . $apiKey;
 
@@ -24,12 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification des erreurs de cURL
     if ($response === false) {
         $error = curl_error($curl);
-        curl_close($curl);
         die("Erreur cURL : " . $error);
     }
     
-    // Fermeture de la requête cURL
-    curl_close($curl);
     // Conversion des données en JSON
     $data = json_decode($response);
 
